@@ -271,6 +271,7 @@ async def run_live_async(
     out_dir: Path,
     bounding_boxes: list[list[list[float]]] | None = None,
     flush_every: int = 500,
+    motherduck_token: str | None = None,
 ) -> None:
     """Continuously ingests a live AISStream subscription into raw Parquet.
 
@@ -278,6 +279,8 @@ async def run_live_async(
     resume/backfill, per docs/data_sources.md, so a reconnect only resumes
     from whatever the service sends next). Flushes every `flush_every`
     messages using the append-only writer, never the overwrite-recompute one.
+    When motherduck_token is given, each flush also appends to MotherDuck
+    (dual-write; see write_rows_motherduck).
     """
     boxes = bounding_boxes or DEFAULT_BOUNDING_BOXES
     buffer: list[str] = []
@@ -287,7 +290,7 @@ async def run_live_async(
             async for line in _live_message_lines(api_key, boxes):
                 buffer.append(line)
                 if len(buffer) >= flush_every:
-                    _flush_live_buffer(buffer, out_dir)
+                    _flush_live_buffer(buffer, out_dir, motherduck_token)
                     buffer = []
         except ConnectionClosed as exc:
             logger.warning("AIS live connection closed (%s), reconnecting in 5s", exc)
@@ -295,15 +298,70 @@ async def run_live_async(
             continue
 
 
-def _flush_live_buffer(lines: list[str], out_dir: Path) -> None:
+def write_rows_motherduck(
+    rows: list[dict[str, Any]],
+    motherduck_token: str,
+    database: str = "lng_nowcasting",
+    table: str = "raw_aisstream",
+) -> int:
+    """Appends raw AIS rows to a MotherDuck table, mirroring the local Parquet
+    write. This is the permanent, queryable copy of raw ingestion; local
+    Parquet partitions are a rotating buffer only (see
+    scripts/cleanup_local_raw.py and docs/decisions/0001-architecture.md's
+    dual-write / 3-day local retention addendum). Never overwrites: each
+    call is a plain append, consistent with raw data being immutable and
+    append-only per CLAUDE.md.
+    """
+    import duckdb
+    import pandas as pd
+
+    df = pd.DataFrame(rows)  # noqa: F841 -- referenced by name in the SQL replacement scan below
+
+    con = duckdb.connect(f"md:{database}?motherduck_token={motherduck_token}")
+    try:
+        con.execute(
+            f"""
+            CREATE TABLE IF NOT EXISTS {table} (
+                mmsi BIGINT,
+                message_type VARCHAR,
+                payload_hash VARCHAR,
+                ingest_date VARCHAR,
+                hour INTEGER,
+                received_at VARCHAR,
+                latitude DOUBLE,
+                longitude DOUBLE,
+                raw_json VARCHAR
+            )
+            """
+        )
+        con.execute(f"INSERT INTO {table} SELECT * FROM df")  # noqa: S608
+    finally:
+        con.close()
+
+    return len(rows)
+
+
+def _flush_live_buffer(
+    lines: list[str], out_dir: Path, motherduck_token: str | None = None
+) -> None:
     messages = []
     for line in lines:
         parsed = parse_message(line)
         if parsed is not None:
             messages.append(parsed)
     rows = dedupe_rows([message_to_row(message) for message in messages])
-    if rows:
-        append_parquet_partition(rows, out_dir)
+    if not rows:
+        return
+
+    append_parquet_partition(rows, out_dir)
+
+    if motherduck_token:
+        try:
+            write_rows_motherduck(rows, motherduck_token)
+        except Exception:
+            logger.exception(
+                "failed to write raw AIS rows to MotherDuck; local Parquet copy still written"
+            )
 
 
 def run_live(
@@ -311,9 +369,10 @@ def run_live(
     out_dir: Path,
     bounding_boxes: list[list[list[float]]] | None = None,
     flush_every: int = 500,
+    motherduck_token: str | None = None,
 ) -> None:
     """Synchronous entrypoint wrapping run_live_async, used by the CLI."""
-    asyncio.run(run_live_async(api_key, out_dir, bounding_boxes, flush_every))
+    asyncio.run(run_live_async(api_key, out_dir, bounding_boxes, flush_every, motherduck_token))
 
 
 def stream_with_reconnect(
@@ -376,13 +435,24 @@ def main(argv: list[str] | None = None) -> int:
         help="Connect to the live AISStream.io WebSocket instead of replaying a fixture. "
         "Reads the API key from the AISSTREAM_API_KEY environment variable.",
     )
+    parser.add_argument(
+        "--motherduck",
+        action="store_true",
+        help="Also dual-write raw rows to MotherDuck (reads MOTHERDUCK_TOKEN env var). "
+        "Only applies with --live.",
+    )
     args = parser.parse_args(argv)
 
     if args.live:
         api_key = os.environ.get("AISSTREAM_API_KEY")
         if not api_key:
             parser.error("--live requires the AISSTREAM_API_KEY environment variable to be set")
-        run_live(api_key, args.out)
+        motherduck_token = None
+        if args.motherduck:
+            motherduck_token = os.environ.get("MOTHERDUCK_TOKEN")
+            if not motherduck_token:
+                parser.error("--motherduck requires the MOTHERDUCK_TOKEN environment variable")
+        run_live(api_key, args.out, motherduck_token=motherduck_token)
         return 0
 
     if args.replay is None:

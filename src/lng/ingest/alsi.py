@@ -182,6 +182,53 @@ def write_vintage_snapshot(rows: list[dict[str, Any]], out_dir: Path, built_at: 
     return snapshot_dir
 
 
+def write_vintage_motherduck(
+    rows: list[dict[str, Any]],
+    built_at: datetime,
+    motherduck_token: str,
+    database: str = "lng_nowcasting",
+    table: str = "raw_alsi",
+) -> int:
+    """Appends this vintage's ALSI rows to a MotherDuck table, mirroring the
+    local Parquet vintage snapshot. This is the permanent, queryable copy;
+    local vintage snapshots are a rotating buffer only (see
+    scripts/cleanup_local_raw.py). Never overwrites a prior vintage: each
+    row carries its own built_at, so retroactive ALSI corrections remain
+    reconstructible per ADR 0001 Decision 4.
+    """
+    import duckdb
+    import pandas as pd
+
+    stamp = built_at.isoformat()
+    rows_with_vintage = [{**row, "built_at": stamp} for row in rows]
+    df = pd.DataFrame(rows_with_vintage)  # noqa: F841 -- used by name in the SQL scan below
+
+    con = duckdb.connect(f"md:{database}?motherduck_token={motherduck_token}")
+    try:
+        con.execute(
+            f"""
+            CREATE TABLE IF NOT EXISTS {table} (
+                facility VARCHAR,
+                name VARCHAR,
+                gasDayStart VARCHAR,
+                inventory_lng DOUBLE,
+                inventory_gwh DOUBLE,
+                sendOut DOUBLE,
+                dtmi_lng DOUBLE,
+                dtmi_gwh DOUBLE,
+                dtrs DOUBLE,
+                status VARCHAR,
+                built_at VARCHAR
+            )
+            """
+        )
+        con.execute(f"INSERT INTO {table} SELECT * FROM df")  # noqa: S608
+    finally:
+        con.close()
+
+    return len(rows)
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI entrypoint: fetches one ALSI report and writes a new vintage snapshot.
 
@@ -210,6 +257,11 @@ def main(argv: list[str] | None = None) -> int:
         help="ALSI 'from' date filter (YYYY-MM-DD). Omitting pulls full history, which is slow.",
     )
     parser.add_argument("--to-date", dest="to_date", help="ALSI 'to' date filter (YYYY-MM-DD).")
+    parser.add_argument(
+        "--motherduck",
+        action="store_true",
+        help="Also dual-write raw rows to MotherDuck (reads MOTHERDUCK_TOKEN env var).",
+    )
     args = parser.parse_args(argv)
 
     if not args.type and not args.known_facilities:
@@ -218,6 +270,12 @@ def main(argv: list[str] | None = None) -> int:
     api_key = os.environ.get("ALSI_API_KEY")
     if not api_key:
         parser.error("ALSI_API_KEY environment variable must be set")
+
+    motherduck_token = None
+    if args.motherduck:
+        motherduck_token = os.environ.get("MOTHERDUCK_TOKEN")
+        if not motherduck_token:
+            parser.error("--motherduck requires the MOTHERDUCK_TOKEN environment variable")
 
     date_params: dict[str, Any] = {}
     if args.from_date:
@@ -243,6 +301,11 @@ def main(argv: list[str] | None = None) -> int:
     built_at = datetime.now(UTC)
     snapshot_dir = write_vintage_snapshot(rows, args.out, built_at)
     print(f"rows_written={len(rows)} snapshot={snapshot_dir}")
+
+    if motherduck_token:
+        n = write_vintage_motherduck(rows, built_at, motherduck_token)
+        print(f"motherduck_rows_written={n}")
+
     return 0
 
 

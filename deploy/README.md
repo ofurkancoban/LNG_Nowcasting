@@ -60,6 +60,17 @@ as a GitHub Actions secret (`VPS_SSH_PRIVATE_KEY`), never in the repository.
    `StandardOutput=journal` / `StandardError=journal` route through
    `journald`.
 
+8. Install the local Parquet cleanup timer (see ADR 0001 Decision 5): every
+   ingestion path now dual-writes to both local Parquet and MotherDuck, so
+   local files older than 3 days are safe to delete automatically.
+   ```
+   sudo cp deploy/systemd/lng-cleanup-local-raw.service /etc/systemd/system/
+   sudo cp deploy/systemd/lng-cleanup-local-raw.timer /etc/systemd/system/
+   sudo systemctl daemon-reload
+   sudo systemctl enable --now lng-cleanup-local-raw.timer
+   systemctl list-timers lng-cleanup-local-raw.timer
+   ```
+
 ## Verifying the unit file
 
 `systemd-analyze verify deploy/systemd/lng-ingest-aisstream.service` requires

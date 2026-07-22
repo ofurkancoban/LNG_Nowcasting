@@ -1,0 +1,9 @@
+[Unit]
+Description=Run lng-cleanup-local-raw.service daily
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target

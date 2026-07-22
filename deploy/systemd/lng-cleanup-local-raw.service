@@ -1,0 +1,12 @@
+[Unit]
+Description=LNG Nowcaster local raw/marts Parquet cleanup (3-day rotating buffer)
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=lng
+WorkingDirectory=/opt/lng-nowcasting
+ExecStart=/opt/lng-nowcasting/.venv/bin/python scripts/cleanup_local_raw.py --root raw --max-age-days 3
+ExecStart=/opt/lng-nowcasting/.venv/bin/python scripts/cleanup_local_raw.py --root marts --max-age-days 3
+StandardOutput=journal
+StandardError=journal

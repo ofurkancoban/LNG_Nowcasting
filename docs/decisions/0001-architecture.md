@@ -89,6 +89,43 @@ backtest accuracy will be inflated by hindsight-corrected data.
 reconstructability; storage growth is accepted as a known tradeoff rather
 than optimized for at this stage. Revisit if storage costs become a problem.
 
+## Decision 5: Dual-write to MotherDuck, local Parquet as a rotating buffer
+
+**Context**: the dashboard needed to be hostable on GitHub Pages, which
+serves static files only and has no access to the VPS's local disk. This
+required moving the dashboard's data source to a network-reachable
+database. MotherDuck (hosted DuckDB, already declared in the project's
+stack) was chosen for this, since Evidence.dev has a native connector for
+it and the existing DuckDB-based query patterns transfer directly.
+
+**Decided**: every ingestion path (AIS live ingestion, ALSI ingestion, and
+the orchestrator's backtest metrics) now dual-writes: local Parquet first
+(unchanged, network-independent, so a MotherDuck outage never blocks
+ingestion), then MotherDuck (`write_rows_motherduck`,
+`write_vintage_motherduck`, `write_metrics_motherduck`). A MotherDuck write
+failure is logged but does not crash the ingester or discard the local
+copy. MotherDuck becomes the permanent, queryable record; local Parquet is
+now a rotating buffer, not the permanent record it was originally decided
+to be.
+
+Local files are deleted once they exceed 3 days old
+(`src/lng/quality/retention.py`, run via
+`scripts/cleanup_local_raw.py` on a schedule, independent of any ingestion
+process so cleanup still happens if an ingester is down). This is a
+deliberate revision of this ADR's original stance that raw Parquet is the
+permanent record — that role now belongs to MotherDuck, and the local copy
+exists only for the fast, network-independent write path plus a short
+recovery buffer if MotherDuck needs to be re-synced from local files after
+an extended outage.
+
+**Consequence, flagged rather than hidden**: this introduces a real
+constraint — if MotherDuck is unreachable for longer than 3 days, the
+local buffer will be cleaned up before a delayed dual-write can occur,
+and that window's data would only exist in the (still-immutable, still
+authoritative for that window) local copy until it is cleaned. This
+tradeoff was accepted explicitly rather than solved with more elaborate
+retry/backfill machinery, to keep the retention mechanism simple.
+
 ## Consequences
 
 - Raw layer is larger than a deduplicated store would be (duplicates from
@@ -98,4 +135,5 @@ than optimized for at this stage. Revisit if storage costs become a problem.
   acceptable at expected data volumes (a few hundred LNG carriers, not the
   full global AIS firehose).
 - Vintage snapshots add storage overhead whose long-term growth rate is not
-  yet bounded (see Decision 4's open retention question).
+  yet bounded (see Decision 4's open retention question) in MotherDuck,
+  though local disk usage is now bounded by Decision 5's 3-day window.
