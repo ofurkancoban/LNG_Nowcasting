@@ -126,6 +126,39 @@ authoritative for that window) local copy until it is cleaned. This
 tradeoff was accepted explicitly rather than solved with more elaborate
 retry/backfill machinery, to keep the retention mechanism simple.
 
+## Decision 6: Worldwide AIS subscription, full dual-write, cost accepted
+
+**Context**: the initial North Sea bounding box only covered a handful of
+Northwest European terminals, but Decision covering ALSI/geofence expansion
+(see the per-facility ALSI work) grew coverage to all 32 active European
+LNG terminals across 12 countries, and the registry's LNG carriers travel
+globally (e.g. Qatar or US Gulf Coast departures) before ever reaching a
+European terminal. A narrow European bounding box could never see a
+carrier's departure, which is exactly the leading-indicator signal this
+project's 2-3-week-ahead nowcast needs.
+
+**Decided**: `DEFAULT_BOUNDING_BOXES` now subscribes to the entire world
+(`[[-90, -180], [90, 180]]`), and every parsed row continues to dual-write
+to MotherDuck (no filtering to only known/matched vessels). This was an
+explicit user decision made after being shown the cost tradeoff: AISStream's
+own documentation estimates ~300 messages/second at worldwide scope
+(~26 million messages/day), and MotherDuck's free tier is very likely to be
+exceeded within about a day at that volume, which may require a paid
+MotherDuck plan. The user chose to proceed and accept this cost risk rather
+than restrict dual-writes to only the curated vessel registry.
+
+`flush_every` was raised from 500 to 20000 to keep MotherDuck write
+frequency to roughly once a minute at worldwide volume rather than several
+writes per second, which would otherwise add connection overhead and risk
+hitting write-rate limits.
+
+**Flagged, not silently assumed**: this is a real, ongoing cost commitment,
+not a one-time decision. If MotherDuck billing becomes a problem, the fix
+is to filter write_rows_motherduck's dual-write to only rows for MMSIs
+already matched against the vessel registry (leaving full detail in the
+local 3-day rotating buffer only) rather than mirroring 100% of global
+traffic permanently.
+
 ## Consequences
 
 - Raw layer is larger than a deduplicated store would be (duplicates from
@@ -137,3 +170,6 @@ retry/backfill machinery, to keep the retention mechanism simple.
 - Vintage snapshots add storage overhead whose long-term growth rate is not
   yet bounded (see Decision 4's open retention question) in MotherDuck,
   though local disk usage is now bounded by Decision 5's 3-day window.
+- Decision 6's worldwide subscription means MotherDuck storage/compute
+  costs are now a genuine ongoing risk, not just a theoretical one; this is
+  accepted deliberately, not an oversight.

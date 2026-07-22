@@ -32,10 +32,15 @@ import websockets
 
 AISSTREAM_WS_URL = "wss://stream.aisstream.io/v0/stream"
 
-# Rough bounding box covering the North Sea / Northwest European coast, where
-# the terminals in data/reference/terminal_geofences.geojson are located.
+# Worldwide subscription: our LNG carrier registry's vessels travel well
+# outside Europe (e.g. Qatar/US Gulf Coast departures) before arriving at a
+# European terminal, and seeing a departure early is exactly the leading
+# indicator this project's nowcast needs. AISStream's own documentation
+# warns to expect ~300 messages/second at this scope; the ingester dual-
+# writes every parsed row to MotherDuck (see write_rows_motherduck), so this
+# is a deliberate, cost-aware choice, not an oversight.
 # [[lat, lon], [lat, lon]] per AISStream's subscription format.
-DEFAULT_BOUNDING_BOXES: list[list[list[float]]] = [[[48.0, -6.0], [62.0, 10.0]]]
+DEFAULT_BOUNDING_BOXES: list[list[list[float]]] = [[[-90.0, -180.0], [90.0, 180.0]]]
 
 logger = logging.getLogger(__name__)
 
@@ -270,7 +275,7 @@ async def run_live_async(
     api_key: str,
     out_dir: Path,
     bounding_boxes: list[list[list[float]]] | None = None,
-    flush_every: int = 500,
+    flush_every: int = 20000,
     motherduck_token: str | None = None,
 ) -> None:
     """Continuously ingests a live AISStream subscription into raw Parquet.
@@ -280,7 +285,10 @@ async def run_live_async(
     from whatever the service sends next). Flushes every `flush_every`
     messages using the append-only writer, never the overwrite-recompute one.
     When motherduck_token is given, each flush also appends to MotherDuck
-    (dual-write; see write_rows_motherduck).
+    (dual-write; see write_rows_motherduck). Default of 20000 assumes a
+    worldwide subscription (~300 msg/s per AISStream's own documentation),
+    giving roughly one flush per minute rather than several MotherDuck
+    writes per second.
     """
     boxes = bounding_boxes or DEFAULT_BOUNDING_BOXES
     buffer: list[str] = []
@@ -368,7 +376,7 @@ def run_live(
     api_key: str,
     out_dir: Path,
     bounding_boxes: list[list[list[float]]] | None = None,
-    flush_every: int = 500,
+    flush_every: int = 20000,
     motherduck_token: str | None = None,
 ) -> None:
     """Synchronous entrypoint wrapping run_live_async, used by the CLI."""
