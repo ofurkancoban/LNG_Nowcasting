@@ -37,20 +37,165 @@ TEST_BASE_URL = "https://alsitest.gie.eu/api"
 # EU-wide aggregate (--type eu) never returns per-facility rows, so any
 # per-terminal backtest requires fetching these individually.
 KNOWN_FACILITIES = {
-    "Gate Rotterdam": {
-        "country": "NL",
-        "company": "21X000000001063H",
-        "facility": "21W0000000000079",
-    },
     "Zeebrugge": {
         "country": "BE",
         "company": "21X000000001006T",
         "facility": "21W0000000001245",
     },
+    "Krk": {
+        "country": "HR",
+        "company": "31X-LNG-HR-----7",
+        "facility": "31W-0000-G-000-Z",
+    },
+    "Inkoo": {
+        "country": "FI",
+        "company": "66X000000000027Z",
+        "facility": "21W000000000130A",
+    },
+    "Hamina": {
+        "country": "FI",
+        "company": "66X-00000000024H",
+        "facility": "66W000000000001U",
+    },
+    "Fos Tonkin": {
+        "country": "FR",
+        "company": "21X0000000010679",
+        "facility": "63W179356656691A",
+    },
+    "Montoir de Bretagne": {
+        "country": "FR",
+        "company": "21X0000000010679",
+        "facility": "63W631527814486R",
+    },
+    "Dunkerque": {
+        "country": "FR",
+        "company": "21X000000001331I",
+        "facility": "21W0000000000451",
+    },
+    "Fos Cavaou": {
+        "country": "FR",
+        "company": "21X000000001070K",
+        "facility": "63W943693783886F",
+    },
     "Wilhelmshaven": {
         "country": "DE",
         "company": "21X000000001403J",
         "facility": "21W000000000129W",
+    },
+    "Brunsbuettel": {
+        "country": "DE",
+        "company": "21X000000001403J",
+        "facility": "37W000000000107A",
+    },
+    "Stade": {
+        "country": "DE",
+        "company": "21X000000001403J",
+        "facility": "37W000000000110L",
+    },
+    "Wilhelmshaven 2": {
+        "country": "DE",
+        "company": "21X000000001403J",
+        "facility": "37W000000000111J",
+    },
+    "Mukran": {
+        "country": "DE",
+        "company": "37X000000000265F",
+        "facility": "37W000000000114D",
+    },
+    "Alexandroupolis": {
+        "country": "GR",
+        "company": "21X738265265081N",
+        "facility": "21W0000000001318",
+    },
+    "Revythoussa": {
+        "country": "GR",
+        "company": "21X-GR-A-A0A0A-G",
+        "facility": "21W000000000040B",
+    },
+    "OLT Toscana": {
+        "country": "IT",
+        "company": "21X000000001109G",
+        "facility": "21W0000000000443",
+    },
+    "Piombino": {
+        "country": "IT",
+        "company": "59XFSRUITALIASTY",
+        "facility": "59WFSRUGOLARTUNH",
+    },
+    "Ravenna": {
+        "country": "IT",
+        "company": "59XFSRUITALIASTY",
+        "facility": "59WBWSINGAPORERX",
+    },
+    "Panigaglia": {
+        "country": "IT",
+        "company": "59XFSRUITALIASTY",
+        "facility": "59W0000000000011",
+    },
+    "Rovigo": {
+        "country": "IT",
+        "company": "21X000000001360B",
+        "facility": "21W000000000082W",
+    },
+    "Klaipeda": {
+        "country": "LT",
+        "company": "21X0000000013740",
+        "facility": "21W0000000001253",
+    },
+    "EemsEnergy": {
+        "country": "NL",
+        "company": "52X000000000088H",
+        "facility": "52W000000000001W",
+    },
+    "Gate Rotterdam": {
+        "country": "NL",
+        "company": "21X000000001063H",
+        "facility": "21W0000000000079",
+    },
+    "Swinoujscie": {
+        "country": "PL",
+        "company": "21X-PL-A-A0A0A-B",
+        "facility": "21W000000000096L",
+    },
+    "Sines": {
+        "country": "PT",
+        "company": "21X0000000013619",
+        "facility": "16WTGNL01------O",
+    },
+    "Bilbao": {
+        "country": "ES",
+        "company": "21X000000001352A",
+        "facility": "21W0000000000362",
+    },
+    "Barcelona": {
+        "country": "ES",
+        "company": "21X000000001254A",
+        "facility": "21W000000000039X",
+    },
+    "Huelva": {
+        "country": "ES",
+        "company": "21X000000001254A",
+        "facility": "21W0000000000370",
+    },
+    "Cartagena": {
+        "country": "ES",
+        "company": "21X000000001254A",
+        "facility": "21W000000000038Z",
+    },
+    "El Musel": {
+        "country": "ES",
+        "company": "21X000000000134P",
+        "facility": "21W0000000000346",
+    },
+    "Sagunto": {
+        "country": "ES",
+        "company": "18XTGPRS-12345-G",
+        "facility": "21W0000000000354",
+    },
+    "Mugardos": {
+        "country": "ES",
+        "company": "18XRGNSA-12345-V",
+        "facility": "21W0000000000338",
     },
 }
 
@@ -113,16 +258,26 @@ def rows_from_response(response: dict[str, Any]) -> list[dict[str, Any]]:
                 "facility": entry.get("code"),
                 "name": entry.get("name"),
                 "gasDayStart": entry["gasDayStart"],
-                "inventory_lng": float(inventory["lng"]),
-                "inventory_gwh": float(inventory["gwh"]),
-                "sendOut": float(entry["sendOut"]),
-                "dtmi_lng": float(dtmi["lng"]),
-                "dtmi_gwh": float(dtmi["gwh"]),
-                "dtrs": float(entry["dtrs"]),
+                "inventory_lng": _parse_alsi_float(inventory["lng"]),
+                "inventory_gwh": _parse_alsi_float(inventory["gwh"]),
+                "sendOut": _parse_alsi_float(entry["sendOut"]),
+                "dtmi_lng": _parse_alsi_float(dtmi["lng"]),
+                "dtmi_gwh": _parse_alsi_float(dtmi["gwh"]),
+                "dtrs": _parse_alsi_float(entry["dtrs"]),
                 "status": entry["status"],
             }
         )
     return rows
+
+
+def _parse_alsi_float(value: Any) -> float | None:
+    """Parses an ALSI numeric field, treating "-" (GIE's placeholder for a
+    missing/no-data gas day, status "N") as a real, expected absence rather
+    than a parsing error.
+    """
+    if value == "-":
+        return None
+    return float(value)
 
 
 def fetch_all_pages(fetch_page: Callable[[int], dict[str, Any]]) -> list[dict[str, Any]]:

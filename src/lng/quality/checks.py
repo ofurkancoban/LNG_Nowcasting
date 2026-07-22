@@ -18,12 +18,14 @@ ALSI_SCHEMA = pa.DataFrameSchema(
         "facility": pa.Column(str, nullable=False),
         "name": pa.Column(str, nullable=False),
         "gasDayStart": pa.Column(str, nullable=False),
-        "inventory_lng": pa.Column(float, nullable=False),
-        "inventory_gwh": pa.Column(float, nullable=False),
-        "sendOut": pa.Column(float, nullable=False),
-        "dtmi_lng": pa.Column(float, nullable=False),
-        "dtmi_gwh": pa.Column(float, nullable=False),
-        "dtrs": pa.Column(float, nullable=False),
+        # Nullable: GIE reports "-" for a missing/no-data gas day (status "N"),
+        # which this project parses as None rather than a schema violation.
+        "inventory_lng": pa.Column(float, nullable=True),
+        "inventory_gwh": pa.Column(float, nullable=True),
+        "sendOut": pa.Column(float, nullable=True),
+        "dtmi_lng": pa.Column(float, nullable=True),
+        "dtmi_gwh": pa.Column(float, nullable=True),
+        "dtrs": pa.Column(float, nullable=True),
         "status": pa.Column(str, nullable=False),
     }
 )

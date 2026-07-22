@@ -73,6 +73,33 @@ def test_rows_from_response_raises_on_flat_inventory_shape() -> None:
         rows_from_response(wrong_shape)
 
 
+def test_rows_from_response_parses_no_data_placeholder_as_none() -> None:
+    """GIE reports "-" for numeric fields on a status "N" (no data) gas day;
+    this must parse as None, not raise or silently become 0.0.
+    """
+    no_data_response = {
+        "last_page": 1,
+        "data": [
+            {
+                "name": "No-data terminal",
+                "code": "21Z0000000000000Z",
+                "gasDayStart": "2024-03-01",
+                "inventory": {"lng": "-", "gwh": "-"},
+                "sendOut": "-",
+                "dtmi": {"lng": "160.0", "gwh": "1088.0"},
+                "dtrs": "250.0",
+                "status": "N",
+            }
+        ],
+    }
+    rows = rows_from_response(no_data_response)
+    assert rows[0]["inventory_lng"] is None
+    assert rows[0]["inventory_gwh"] is None
+    assert rows[0]["sendOut"] is None
+    assert rows[0]["dtmi_lng"] == 160.0
+    assert rows[0]["status"] == "N"
+
+
 def test_fetch_all_pages_loops_over_multiple_pages() -> None:
     page_1 = {"last_page": 2, "data": [{"facility": "A"}]}
     page_2 = {"last_page": 2, "data": [{"facility": "B"}]}
@@ -162,12 +189,12 @@ def test_ingested_rows_schema(fixture_response: dict[str, object]) -> None:
             "facility": pa.Column(str, nullable=False),
             "name": pa.Column(str, nullable=False),
             "gasDayStart": pa.Column(str, nullable=False),
-            "inventory_lng": pa.Column(float, nullable=False),
-            "inventory_gwh": pa.Column(float, nullable=False),
-            "sendOut": pa.Column(float, nullable=False),
-            "dtmi_lng": pa.Column(float, nullable=False),
-            "dtmi_gwh": pa.Column(float, nullable=False),
-            "dtrs": pa.Column(float, nullable=False),
+            "inventory_lng": pa.Column(float, nullable=True),
+            "inventory_gwh": pa.Column(float, nullable=True),
+            "sendOut": pa.Column(float, nullable=True),
+            "dtmi_lng": pa.Column(float, nullable=True),
+            "dtmi_gwh": pa.Column(float, nullable=True),
+            "dtrs": pa.Column(float, nullable=True),
             "status": pa.Column(str, nullable=False),
         }
     )

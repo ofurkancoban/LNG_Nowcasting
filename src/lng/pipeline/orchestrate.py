@@ -17,12 +17,12 @@ Known approximations, flagged rather than hidden:
   will underestimate the draught range and understate delivered volume.
 - GIE ALSI facility EIC codes are mapped to
   data/reference/terminal_geofences.geojson terminal names via
-  `FACILITY_TO_TERMINAL` below. Verified against a real
-  GET /api/about?show=listing response on 2026-07-22: Rotterdam Gate
-  Terminal is `21W0000000000079`, Zeebrugge LNG Terminal is
-  `21W0000000001245`, Wilhelmshaven LNG Terminal 1 (FSRU Hoegh Esperanza) is
-  `21W000000000129W`. Only covers these three terminals; extend this
-  mapping before scoring against additional European LNG terminals.
+  `FACILITY_TO_TERMINAL` below, derived from `lng.ingest.alsi.KNOWN_FACILITIES`
+  (the single source of truth for facility identifiers, verified against a
+  real GET /api/about?show=listing response on 2026-07-22). Covers all 32
+  currently active European LNG terminals reporting to ALSI as of that date
+  (excludes decommissioned facilities and post-Brexit UK terminals, which
+  stopped reporting to the EU ALSI platform).
 """
 
 from __future__ import annotations
@@ -39,19 +39,14 @@ import pyarrow.dataset as ds
 from lng.events.detect import ArrivalEvent, PositionSample, detect_arrivals
 from lng.events.geofence import TerminalGeofence, load_terminal_geofences
 from lng.ingest.aisstream import assert_ship_static_data_schema
+from lng.ingest.alsi import KNOWN_FACILITIES
 from lng.nowcast.backtest import AlsiVintage, BacktestFold, run_backtest, write_metrics_parquet
 from lng.nowcast.model import aggregate_daily_nowcast, estimate_delivered_volume_cbm
 from lng.vessels.registry import VesselRecord, VesselRegistry
 
-# Provisional, project-defined mapping from GIE ALSI facility EIC code to a
-# terminal name in data/reference/terminal_geofences.geojson. Only covers
-# the fixture codes used in tests; must be extended with real EIC codes
-# before use against real ALSI data (see module docstring).
-FACILITY_TO_TERMINAL = {
-    "21W0000000000079": "Gate Rotterdam",  # verified via
-    "21W0000000001245": "Zeebrugge",  # /api/about?show=listing
-    "21W000000000129W": "Wilhelmshaven",  # on 2026-07-22
-}
+# Derived from lng.ingest.alsi.KNOWN_FACILITIES (the single source of truth
+# for facility EIC codes) so the two never drift apart.
+FACILITY_TO_TERMINAL = {v["facility"]: k for k, v in KNOWN_FACILITIES.items()}
 
 
 @dataclass(frozen=True)

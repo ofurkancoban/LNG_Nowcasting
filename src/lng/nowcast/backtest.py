@@ -65,6 +65,10 @@ def run_backtest(
         actual_row = next(
             row for row in vintage.rows if row["gasDayStart"] == prediction["gas_day"]
         )
+        if actual_row["sendOut"] is None:
+            # GIE reported no data for this gas day (status "N"); skip rather
+            # than scoring a prediction against a missing ground truth value.
+            continue
 
         folds.append(
             BacktestFold(

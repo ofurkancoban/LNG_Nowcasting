@@ -3,42 +3,142 @@
   "features": [
     {
       "type": "Feature",
-      "properties": { "terminal": "Gate Rotterdam", "zone": "approach", "is_test_fixture": false },
+      "properties": {
+        "terminal": "Gate Rotterdam",
+        "zone": "approach",
+        "is_test_fixture": false
+      },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [3.900, 51.850], [4.140, 51.850], [4.140, 52.040], [3.900, 52.040], [3.900, 51.850]
-        ]]
+        "coordinates": [
+          [
+            [
+              3.9,
+              51.85
+            ],
+            [
+              4.14,
+              51.85
+            ],
+            [
+              4.14,
+              52.04
+            ],
+            [
+              3.9,
+              52.04
+            ],
+            [
+              3.9,
+              51.85
+            ]
+          ]
+        ]
       }
     },
     {
       "type": "Feature",
-      "properties": { "terminal": "Gate Rotterdam", "zone": "berth", "is_test_fixture": false },
+      "properties": {
+        "terminal": "Gate Rotterdam",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [4.000, 51.930], [4.040, 51.930], [4.040, 51.960], [4.000, 51.960], [4.000, 51.930]
-        ]]
+        "coordinates": [
+          [
+            [
+              4.0,
+              51.93
+            ],
+            [
+              4.04,
+              51.93
+            ],
+            [
+              4.04,
+              51.96
+            ],
+            [
+              4.0,
+              51.96
+            ],
+            [
+              4.0,
+              51.93
+            ]
+          ]
+        ]
       }
     },
     {
       "type": "Feature",
-      "properties": { "terminal": "Zeebrugge", "zone": "approach", "is_test_fixture": false },
+      "properties": {
+        "terminal": "Zeebrugge",
+        "zone": "approach",
+        "is_test_fixture": false
+      },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [3.050, 51.250], [3.350, 51.250], [3.350, 51.410], [3.050, 51.410], [3.050, 51.250]
-        ]]
+        "coordinates": [
+          [
+            [
+              3.05,
+              51.25
+            ],
+            [
+              3.35,
+              51.25
+            ],
+            [
+              3.35,
+              51.41
+            ],
+            [
+              3.05,
+              51.41
+            ],
+            [
+              3.05,
+              51.25
+            ]
+          ]
+        ]
       }
     },
     {
       "type": "Feature",
-      "properties": { "terminal": "Zeebrugge", "zone": "berth", "is_test_fixture": false },
+      "properties": {
+        "terminal": "Zeebrugge",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [3.170, 51.315], [3.220, 51.315], [3.220, 51.345], [3.170, 51.345], [3.170, 51.315]
-        ]]
+        "coordinates": [
+          [
+            [
+              3.17,
+              51.315
+            ],
+            [
+              3.22,
+              51.315
+            ],
+            [
+              3.22,
+              51.345
+            ],
+            [
+              3.17,
+              51.345
+            ],
+            [
+              3.17,
+              51.315
+            ]
+          ]
+        ]
       }
     },
     {
@@ -51,19 +151,2124 @@
       },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [7.950, 53.550], [8.270, 53.550], [8.270, 53.730], [7.950, 53.730], [7.950, 53.550]
-        ]]
+        "coordinates": [
+          [
+            [
+              7.95,
+              53.55
+            ],
+            [
+              8.27,
+              53.55
+            ],
+            [
+              8.27,
+              53.73
+            ],
+            [
+              7.95,
+              53.73
+            ],
+            [
+              7.95,
+              53.55
+            ]
+          ]
+        ]
       }
     },
     {
       "type": "Feature",
-      "properties": { "terminal": "Wilhelmshaven", "zone": "berth", "is_test_fixture": false },
+      "properties": {
+        "terminal": "Wilhelmshaven",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [8.095, 53.635], [8.130, 53.635], [8.130, 53.650], [8.095, 53.650], [8.095, 53.635]
-        ]]
+        "coordinates": [
+          [
+            [
+              8.095,
+              53.635
+            ],
+            [
+              8.13,
+              53.635
+            ],
+            [
+              8.13,
+              53.65
+            ],
+            [
+              8.095,
+              53.65
+            ],
+            [
+              8.095,
+              53.635
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Krk",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (14.5747, 45.032) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.4247,
+              44.882
+            ],
+            [
+              14.7247,
+              44.882
+            ],
+            [
+              14.7247,
+              45.182
+            ],
+            [
+              14.4247,
+              45.182
+            ],
+            [
+              14.4247,
+              44.882
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Krk",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.5447,
+              45.002
+            ],
+            [
+              14.6047,
+              45.002
+            ],
+            [
+              14.6047,
+              45.062
+            ],
+            [
+              14.5447,
+              45.062
+            ],
+            [
+              14.5447,
+              45.002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Inkoo",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (23.9163, 60.0181) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              23.7663,
+              59.8681
+            ],
+            [
+              24.0663,
+              59.8681
+            ],
+            [
+              24.0663,
+              60.1681
+            ],
+            [
+              23.7663,
+              60.1681
+            ],
+            [
+              23.7663,
+              59.8681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Inkoo",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              23.8863,
+              59.9881
+            ],
+            [
+              23.9463,
+              59.9881
+            ],
+            [
+              23.9463,
+              60.0481
+            ],
+            [
+              23.8863,
+              60.0481
+            ],
+            [
+              23.8863,
+              59.9881
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Hamina",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (27.1637, 60.5181) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.0137,
+              60.3681
+            ],
+            [
+              27.3137,
+              60.3681
+            ],
+            [
+              27.3137,
+              60.6681
+            ],
+            [
+              27.0137,
+              60.6681
+            ],
+            [
+              27.0137,
+              60.3681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Hamina",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.1337,
+              60.4881
+            ],
+            [
+              27.1937,
+              60.4881
+            ],
+            [
+              27.1937,
+              60.5481
+            ],
+            [
+              27.1337,
+              60.5481
+            ],
+            [
+              27.1337,
+              60.4881
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Fos Tonkin",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (4.8492, 43.4556) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.6992,
+              43.3056
+            ],
+            [
+              4.9992,
+              43.3056
+            ],
+            [
+              4.9992,
+              43.6056
+            ],
+            [
+              4.6992,
+              43.6056
+            ],
+            [
+              4.6992,
+              43.3056
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Fos Tonkin",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.8192,
+              43.4256
+            ],
+            [
+              4.8792,
+              43.4256
+            ],
+            [
+              4.8792,
+              43.4856
+            ],
+            [
+              4.8192,
+              43.4856
+            ],
+            [
+              4.8192,
+              43.4256
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Montoir de Bretagne",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (-2.1368, 47.3034) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.2868,
+              47.1534
+            ],
+            [
+              -1.9868,
+              47.1534
+            ],
+            [
+              -1.9868,
+              47.4534
+            ],
+            [
+              -2.2868,
+              47.4534
+            ],
+            [
+              -2.2868,
+              47.1534
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Montoir de Bretagne",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.1668,
+              47.2734
+            ],
+            [
+              -2.1068,
+              47.2734
+            ],
+            [
+              -2.1068,
+              47.3334
+            ],
+            [
+              -2.1668,
+              47.3334
+            ],
+            [
+              -2.1668,
+              47.2734
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Dunkerque",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (2.187, 51.0395) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.037,
+              50.8895
+            ],
+            [
+              2.337,
+              50.8895
+            ],
+            [
+              2.337,
+              51.1895
+            ],
+            [
+              2.037,
+              51.1895
+            ],
+            [
+              2.037,
+              50.8895
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Dunkerque",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.157,
+              51.0095
+            ],
+            [
+              2.217,
+              51.0095
+            ],
+            [
+              2.217,
+              51.0695
+            ],
+            [
+              2.157,
+              51.0695
+            ],
+            [
+              2.157,
+              51.0095
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Fos Cavaou",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (4.9019, 43.4262) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.7519,
+              43.2762
+            ],
+            [
+              5.0519,
+              43.2762
+            ],
+            [
+              5.0519,
+              43.5762
+            ],
+            [
+              4.7519,
+              43.5762
+            ],
+            [
+              4.7519,
+              43.2762
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Fos Cavaou",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              4.8719,
+              43.3962
+            ],
+            [
+              4.9319,
+              43.3962
+            ],
+            [
+              4.9319,
+              43.4562
+            ],
+            [
+              4.8719,
+              43.4562
+            ],
+            [
+              4.8719,
+              43.3962
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Brunsbuettel",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (9.172, 53.8873) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.022,
+              53.7373
+            ],
+            [
+              9.322,
+              53.7373
+            ],
+            [
+              9.322,
+              54.0373
+            ],
+            [
+              9.022,
+              54.0373
+            ],
+            [
+              9.022,
+              53.7373
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Brunsbuettel",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.142,
+              53.8573
+            ],
+            [
+              9.202,
+              53.8573
+            ],
+            [
+              9.202,
+              53.9173
+            ],
+            [
+              9.142,
+              53.9173
+            ],
+            [
+              9.142,
+              53.8573
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Stade",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (9.5199, 53.6556) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.3699,
+              53.5056
+            ],
+            [
+              9.6699,
+              53.5056
+            ],
+            [
+              9.6699,
+              53.8056
+            ],
+            [
+              9.3699,
+              53.8056
+            ],
+            [
+              9.3699,
+              53.5056
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Stade",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.4899,
+              53.6256
+            ],
+            [
+              9.5499,
+              53.6256
+            ],
+            [
+              9.5499,
+              53.6856
+            ],
+            [
+              9.4899,
+              53.6856
+            ],
+            [
+              9.4899,
+              53.6256
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Wilhelmshaven 2",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (8.1545, 53.5252) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.0045,
+              53.3752
+            ],
+            [
+              8.3045,
+              53.3752
+            ],
+            [
+              8.3045,
+              53.6752
+            ],
+            [
+              8.0045,
+              53.6752
+            ],
+            [
+              8.0045,
+              53.3752
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Wilhelmshaven 2",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.1245,
+              53.4952
+            ],
+            [
+              8.1845,
+              53.4952
+            ],
+            [
+              8.1845,
+              53.5552
+            ],
+            [
+              8.1245,
+              53.5552
+            ],
+            [
+              8.1245,
+              53.4952
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Mukran",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (13.5934, 54.4802) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.4434,
+              54.3302
+            ],
+            [
+              13.7434,
+              54.3302
+            ],
+            [
+              13.7434,
+              54.6302
+            ],
+            [
+              13.4434,
+              54.6302
+            ],
+            [
+              13.4434,
+              54.3302
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Mukran",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13.5634,
+              54.4502
+            ],
+            [
+              13.6234,
+              54.4502
+            ],
+            [
+              13.6234,
+              54.5102
+            ],
+            [
+              13.5634,
+              54.5102
+            ],
+            [
+              13.5634,
+              54.4502
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Alexandroupolis",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (25.8633, 40.815) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              25.7133,
+              40.665
+            ],
+            [
+              26.0133,
+              40.665
+            ],
+            [
+              26.0133,
+              40.965
+            ],
+            [
+              25.7133,
+              40.965
+            ],
+            [
+              25.7133,
+              40.665
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Alexandroupolis",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              25.8333,
+              40.785
+            ],
+            [
+              25.8933,
+              40.785
+            ],
+            [
+              25.8933,
+              40.845
+            ],
+            [
+              25.8333,
+              40.845
+            ],
+            [
+              25.8333,
+              40.785
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Revythoussa",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (23.4033, 37.9593) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              23.2533,
+              37.8093
+            ],
+            [
+              23.5533,
+              37.8093
+            ],
+            [
+              23.5533,
+              38.1093
+            ],
+            [
+              23.2533,
+              38.1093
+            ],
+            [
+              23.2533,
+              37.8093
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Revythoussa",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              23.3733,
+              37.9293
+            ],
+            [
+              23.4333,
+              37.9293
+            ],
+            [
+              23.4333,
+              37.9893
+            ],
+            [
+              23.3733,
+              37.9893
+            ],
+            [
+              23.3733,
+              37.9293
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "OLT Toscana",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (10.2893, 43.5371) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.1393,
+              43.3871
+            ],
+            [
+              10.4393,
+              43.3871
+            ],
+            [
+              10.4393,
+              43.6871
+            ],
+            [
+              10.1393,
+              43.6871
+            ],
+            [
+              10.1393,
+              43.3871
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "OLT Toscana",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.2593,
+              43.5071
+            ],
+            [
+              10.3193,
+              43.5071
+            ],
+            [
+              10.3193,
+              43.5671
+            ],
+            [
+              10.2593,
+              43.5671
+            ],
+            [
+              10.2593,
+              43.5071
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Piombino",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (10.4989, 42.9241) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.3489,
+              42.7741
+            ],
+            [
+              10.6489,
+              42.7741
+            ],
+            [
+              10.6489,
+              43.0741
+            ],
+            [
+              10.3489,
+              43.0741
+            ],
+            [
+              10.3489,
+              42.7741
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Piombino",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.4689,
+              42.8941
+            ],
+            [
+              10.5289,
+              42.8941
+            ],
+            [
+              10.5289,
+              42.9541
+            ],
+            [
+              10.4689,
+              42.9541
+            ],
+            [
+              10.4689,
+              42.8941
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Ravenna",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (12.3034, 44.4764) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.1534,
+              44.3264
+            ],
+            [
+              12.4534,
+              44.3264
+            ],
+            [
+              12.4534,
+              44.6264
+            ],
+            [
+              12.1534,
+              44.6264
+            ],
+            [
+              12.1534,
+              44.3264
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Ravenna",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.2734,
+              44.4464
+            ],
+            [
+              12.3334,
+              44.4464
+            ],
+            [
+              12.3334,
+              44.5064
+            ],
+            [
+              12.2734,
+              44.5064
+            ],
+            [
+              12.2734,
+              44.4464
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Panigaglia",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (9.8314, 44.0739) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.6814,
+              43.9239
+            ],
+            [
+              9.9814,
+              43.9239
+            ],
+            [
+              9.9814,
+              44.2239
+            ],
+            [
+              9.6814,
+              44.2239
+            ],
+            [
+              9.6814,
+              43.9239
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Panigaglia",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.8014,
+              44.0439
+            ],
+            [
+              9.8614,
+              44.0439
+            ],
+            [
+              9.8614,
+              44.1039
+            ],
+            [
+              9.8014,
+              44.1039
+            ],
+            [
+              9.8014,
+              44.0439
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Rovigo",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (12.2822, 45.0562) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.1322,
+              44.9062
+            ],
+            [
+              12.4322,
+              44.9062
+            ],
+            [
+              12.4322,
+              45.2062
+            ],
+            [
+              12.1322,
+              45.2062
+            ],
+            [
+              12.1322,
+              44.9062
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Rovigo",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.2522,
+              45.0262
+            ],
+            [
+              12.3122,
+              45.0262
+            ],
+            [
+              12.3122,
+              45.0862
+            ],
+            [
+              12.2522,
+              45.0862
+            ],
+            [
+              12.2522,
+              45.0262
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Klaipeda",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (21.093, 55.7282) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.943,
+              55.5782
+            ],
+            [
+              21.243,
+              55.5782
+            ],
+            [
+              21.243,
+              55.8782
+            ],
+            [
+              20.943,
+              55.8782
+            ],
+            [
+              20.943,
+              55.5782
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Klaipeda",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              21.063,
+              55.6982
+            ],
+            [
+              21.123,
+              55.6982
+            ],
+            [
+              21.123,
+              55.7582
+            ],
+            [
+              21.063,
+              55.7582
+            ],
+            [
+              21.063,
+              55.6982
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "EemsEnergy",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (6.8473, 53.4448) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.6973,
+              53.2948
+            ],
+            [
+              6.9973,
+              53.2948
+            ],
+            [
+              6.9973,
+              53.5948
+            ],
+            [
+              6.6973,
+              53.5948
+            ],
+            [
+              6.6973,
+              53.2948
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "EemsEnergy",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              6.8173,
+              53.4148
+            ],
+            [
+              6.8773,
+              53.4148
+            ],
+            [
+              6.8773,
+              53.4748
+            ],
+            [
+              6.8173,
+              53.4748
+            ],
+            [
+              6.8173,
+              53.4148
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Swinoujscie",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (14.2964, 53.9113) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.1464,
+              53.7613
+            ],
+            [
+              14.4464,
+              53.7613
+            ],
+            [
+              14.4464,
+              54.0613
+            ],
+            [
+              14.1464,
+              54.0613
+            ],
+            [
+              14.1464,
+              53.7613
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Swinoujscie",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              14.2664,
+              53.8813
+            ],
+            [
+              14.3264,
+              53.8813
+            ],
+            [
+              14.3264,
+              53.9413
+            ],
+            [
+              14.2664,
+              53.9413
+            ],
+            [
+              14.2664,
+              53.8813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Sines",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (-8.8813, 37.9518) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -9.0313,
+              37.8018
+            ],
+            [
+              -8.7313,
+              37.8018
+            ],
+            [
+              -8.7313,
+              38.1018
+            ],
+            [
+              -9.0313,
+              38.1018
+            ],
+            [
+              -9.0313,
+              37.8018
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Sines",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.9113,
+              37.9218
+            ],
+            [
+              -8.8513,
+              37.9218
+            ],
+            [
+              -8.8513,
+              37.9818
+            ],
+            [
+              -8.9113,
+              37.9818
+            ],
+            [
+              -8.9113,
+              37.9218
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Bilbao",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (-3.0942, 43.3641) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.2442,
+              43.2141
+            ],
+            [
+              -2.9442,
+              43.2141
+            ],
+            [
+              -2.9442,
+              43.5141
+            ],
+            [
+              -3.2442,
+              43.5141
+            ],
+            [
+              -3.2442,
+              43.2141
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Bilbao",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.1242,
+              43.3341
+            ],
+            [
+              -3.0642,
+              43.3341
+            ],
+            [
+              -3.0642,
+              43.3941
+            ],
+            [
+              -3.1242,
+              43.3941
+            ],
+            [
+              -3.1242,
+              43.3341
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Barcelona",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (2.1617, 41.3396) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.0117,
+              41.1896
+            ],
+            [
+              2.3117,
+              41.1896
+            ],
+            [
+              2.3117,
+              41.4896
+            ],
+            [
+              2.0117,
+              41.4896
+            ],
+            [
+              2.0117,
+              41.1896
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Barcelona",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2.1317,
+              41.3096
+            ],
+            [
+              2.1917,
+              41.3096
+            ],
+            [
+              2.1917,
+              41.3696
+            ],
+            [
+              2.1317,
+              41.3696
+            ],
+            [
+              2.1317,
+              41.3096
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Huelva",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (-6.908, 37.1727) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -7.058,
+              37.0227
+            ],
+            [
+              -6.758,
+              37.0227
+            ],
+            [
+              -6.758,
+              37.3227
+            ],
+            [
+              -7.058,
+              37.3227
+            ],
+            [
+              -7.058,
+              37.0227
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Huelva",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -6.938,
+              37.1427
+            ],
+            [
+              -6.878,
+              37.1427
+            ],
+            [
+              -6.878,
+              37.2027
+            ],
+            [
+              -6.938,
+              37.2027
+            ],
+            [
+              -6.938,
+              37.1427
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Cartagena",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (-0.9595, 37.5686) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.1095,
+              37.4186
+            ],
+            [
+              -0.8095,
+              37.4186
+            ],
+            [
+              -0.8095,
+              37.7186
+            ],
+            [
+              -1.1095,
+              37.7186
+            ],
+            [
+              -1.1095,
+              37.4186
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Cartagena",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.9895,
+              37.5386
+            ],
+            [
+              -0.9295,
+              37.5386
+            ],
+            [
+              -0.9295,
+              37.5986
+            ],
+            [
+              -0.9895,
+              37.5986
+            ],
+            [
+              -0.9895,
+              37.5386
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "El Musel",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (-5.6605, 43.5619) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -5.8105,
+              43.4119
+            ],
+            [
+              -5.5105,
+              43.4119
+            ],
+            [
+              -5.5105,
+              43.7119
+            ],
+            [
+              -5.8105,
+              43.7119
+            ],
+            [
+              -5.8105,
+              43.4119
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "El Musel",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -5.6905,
+              43.5319
+            ],
+            [
+              -5.6305,
+              43.5319
+            ],
+            [
+              -5.6305,
+              43.5919
+            ],
+            [
+              -5.6905,
+              43.5919
+            ],
+            [
+              -5.6905,
+              43.5319
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Sagunto",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (-0.2172, 39.6593) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.3672,
+              39.5093
+            ],
+            [
+              -0.0672,
+              39.5093
+            ],
+            [
+              -0.0672,
+              39.8093
+            ],
+            [
+              -0.3672,
+              39.8093
+            ],
+            [
+              -0.3672,
+              39.5093
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Sagunto",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -0.2472,
+              39.6293
+            ],
+            [
+              -0.1872,
+              39.6293
+            ],
+            [
+              -0.1872,
+              39.6893
+            ],
+            [
+              -0.2472,
+              39.6893
+            ],
+            [
+              -0.2472,
+              39.6293
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Mugardos",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "Auto-generated from ALSI's own facility coordinate (-8.2403, 43.4614) on 2026-07-22; approximate, pending manual verification against real jetty position (see Wilhelmshaven's documented ~13km discrepancy)."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.3903,
+              43.3114
+            ],
+            [
+              -8.0903,
+              43.3114
+            ],
+            [
+              -8.0903,
+              43.6114
+            ],
+            [
+              -8.3903,
+              43.6114
+            ],
+            [
+              -8.3903,
+              43.3114
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "Mugardos",
+        "zone": "berth",
+        "is_test_fixture": false
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -8.2703,
+              43.4314
+            ],
+            [
+              -8.2103,
+              43.4314
+            ],
+            [
+              -8.2103,
+              43.4914
+            ],
+            [
+              -8.2703,
+              43.4914
+            ],
+            [
+              -8.2703,
+              43.4314
+            ]
+          ]
+        ]
       }
     },
     {
@@ -76,9 +2281,30 @@
       },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [179.0, 0.0], [-179.0, 0.0], [-179.0, 1.0], [179.0, 1.0], [179.0, 0.0]
-        ]]
+        "coordinates": [
+          [
+            [
+              179.0,
+              0.0
+            ],
+            [
+              -179.0,
+              0.0
+            ],
+            [
+              -179.0,
+              1.0
+            ],
+            [
+              179.0,
+              1.0
+            ],
+            [
+              179.0,
+              0.0
+            ]
+          ]
+        ]
       }
     },
     {
@@ -91,9 +2317,30 @@
       },
       "geometry": {
         "type": "Polygon",
-        "coordinates": [[
-          [179.5, 0.3], [-179.5, 0.3], [-179.5, 0.7], [179.5, 0.7], [179.5, 0.3]
-        ]]
+        "coordinates": [
+          [
+            [
+              179.5,
+              0.3
+            ],
+            [
+              -179.5,
+              0.3
+            ],
+            [
+              -179.5,
+              0.7
+            ],
+            [
+              179.5,
+              0.7
+            ],
+            [
+              179.5,
+              0.3
+            ]
+          ]
+        ]
       }
     }
   ]
