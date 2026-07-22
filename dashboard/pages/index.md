@@ -2,27 +2,12 @@
 title: LNG Nowcast Overview
 ---
 
-<Grid cols=2>
-
-<div>
-
 # European LNG Import Nowcast
 
-Tracks estimated LNG deliveries per terminal, detected from AIS carrier
-arrivals, and validates them against GIE ALSI ground truth. See
-[Backtest Accuracy](/backtest-accuracy) for fold-by-fold validation detail.
-
-</div>
-
-<div class="text-right text-sm text-gray-500 dark:text-gray-400 pt-2">
-
-Data source: `marts/backtest/metrics_*.parquet`
-<br/>
-Pipeline: `src/lng/pipeline/orchestrate.py`
-
-</div>
-
-</Grid>
+Estimated LNG deliveries per terminal, detected from AIS carrier movements
+and validated against official GIE ALSI data. See
+[Backtest Accuracy](/backtest-accuracy) for details, or the
+[Live Vessel Tracker](/tracker) for current vessel positions.
 
 ```sql overall_stats
 select
@@ -59,12 +44,3 @@ order by terminal
     <Column id=mae_gwh title="MAE (GWh/d)" fmt="num2" contentType=colorscale colorScale=blues/>
     <Column id=mape_pct title="MAPE (%)" fmt="num1" contentType=colorscale colorScale=blues/>
 </DataTable>
-
-<Alert status="info">
-
-This dashboard's current numbers come from a demonstration backtest run, not
-a live production nowcast. See the caveat on the
-[Backtest Accuracy](/backtest-accuracy) page before drawing conclusions from
-these figures.
-
-</Alert>

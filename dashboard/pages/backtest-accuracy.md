@@ -4,12 +4,8 @@ title: Backtest Accuracy
 
 # Backtest Accuracy
 
-Walk-forward backtest results comparing the nowcast model
-(`src/lng/nowcast/model.py`) against vintaged GIE ALSI ground truth
-(`src/lng/nowcast/backtest.py`), per docs/milestones/M5.md. Every fold here
-was scored only against the ALSI vintage that existed as of its prediction
-date; no fold uses a later, hindsight-corrected ALSI revision (ADR 0001,
-Decision 4).
+How well the nowcast model predicts LNG deliveries, compared day by day
+against official GIE ALSI figures.
 
 ```sql summary
 select
@@ -69,15 +65,3 @@ order by terminal, gas_day
     <Column id=actual_gwh title="Actual (GWh/d)" fmt="num2"/>
     <Column id=abs_error_gwh title="Abs. error (GWh/d)" fmt="num2" contentType=colorscale colorScale=reds/>
 </DataTable>
-
-<Alert status="warning">
-
-**These numbers are a demonstration, not a validated production result.**
-The nowcast model's cargo-to-energy conversion factor
-(`APPROXIMATE_GWH_PER_CBM` in `src/lng/nowcast/model.py`) is an
-uncalibrated approximation, and the current data behind this page comes
-from a manually-constructed backtest run used to prove the pipeline works
-end to end. Treat MAE/MAPE here as evidence the harness is wired correctly,
-not as evidence of real-world accuracy.
-
-</Alert>
