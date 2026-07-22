@@ -1,0 +1,75 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "terminal": "Gate Rotterdam", "zone": "approach", "is_test_fixture": false },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [3.900, 51.850], [4.140, 51.850], [4.140, 52.040], [3.900, 52.040], [3.900, 51.850]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "terminal": "Gate Rotterdam", "zone": "berth", "is_test_fixture": false },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [4.000, 51.930], [4.040, 51.930], [4.040, 51.960], [4.000, 51.960], [4.000, 51.930]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "terminal": "Zeebrugge", "zone": "approach", "is_test_fixture": false },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [3.050, 51.250], [3.350, 51.250], [3.350, 51.410], [3.050, 51.410], [3.050, 51.250]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "terminal": "Zeebrugge", "zone": "berth", "is_test_fixture": false },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [3.170, 51.315], [3.220, 51.315], [3.220, 51.345], [3.170, 51.345], [3.170, 51.315]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "TEST_ANTIMERIDIAN_FIXTURE",
+        "zone": "approach",
+        "is_test_fixture": true,
+        "note": "Synthetic terminal for antimeridian-crossing test coverage only. Not a real facility; no LNG terminal in Europe crosses 180 degrees longitude."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [179.0, 0.0], [-179.0, 0.0], [-179.0, 1.0], [179.0, 1.0], [179.0, 0.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "terminal": "TEST_ANTIMERIDIAN_FIXTURE",
+        "zone": "berth",
+        "is_test_fixture": true,
+        "note": "Synthetic terminal for antimeridian-crossing test coverage only. Not a real facility."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [179.5, 0.3], [-179.5, 0.3], [-179.5, 0.7], [179.5, 0.7], [179.5, 0.3]
+        ]]
+      }
+    }
+  ]
+}

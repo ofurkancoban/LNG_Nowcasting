@@ -7,6 +7,7 @@ dependencies = [
     "pyarrow>=17.0.0",
     "pandas>=2.2.0",
     "pandera>=0.20.0",
+    "shapely>=2.0.0",
 ]
 
 [dependency-groups]
@@ -35,7 +36,7 @@ strict = true
 python_version = "3.11"
 
 [[tool.mypy.overrides]]
-module = ["pyarrow", "pyarrow.parquet"]
+module = ["pyarrow", "pyarrow.parquet", "shapely", "shapely.geometry"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
