@@ -26,29 +26,33 @@ Real time AIS data delivered over a WebSocket.
   at most 50 MMSI values. `FilterMessageTypes` accepts any of the ~24+
   supported AIS message type names. VERIFIED.
 - **Message envelope**: every message is
-  `{"MessageType": "...", "Message": {...}, "Metadata": {...}}`. `Metadata`
-  carries latitude, longitude, MMSI, ship name, and a UTC timestamp regardless
-  of message type. VERIFIED.
+  `{"MessageType": "...", "Message": {...}, "MetaData": {...}}`. **Note the
+  capital D in `MetaData`** — the documentation prose (and this project's
+  original M1 implementation) assumed `Metadata`, which caused every single
+  live message to be silently classified as malformed until this was
+  corrected. VERIFIED against real live traffic captured on 2026-07-22 (see
+  `src/lng/ingest/aisstream.py` module docstring). `MetaData` carries
+  `MMSI`, `MMSI_String`, `ShipName`, `latitude`, `longitude`, and `time_utc`
+  regardless of message type. VERIFIED.
 - **Message types relevant to this project**:
-  - Type 1/2/3 -> `PositionReport` (position, speed, course, heading).
-  - Type 5 -> `ShipStaticData`. Per the documentation summary this includes
-    ship name, IMO number, call sign, dimensions, draught, destination, and
-    ETA. M1 pinned a concrete field-name contract in
-    `src/lng/ingest/aisstream.py::SHIP_STATIC_DATA_REQUIRED_FIELDS`
-    (`ImoNumber`, `CallSign`, `ShipType`, `Dimension`,
-    `MaximumStaticDraught`, `Destination`, `Eta`), enforced by a schema-drift
-    test that fails loudly if any field is absent from a message. **These
-    exact names are still UNVERIFIED against live traffic** — M1's fixture
-    (`tests/fixtures/aisstream_sample.jsonl`) is a synthetic sample built to
-    this assumed schema, not a message set captured from a real
-    subscription, because no live network call was made or authorized this
-    session. Before trusting these field names in production, connect once
-    with the real API key in `.env` and confirm a live `ShipStaticData`
-    message matches; update this section to VERIFIED (or correct the field
-    names and the `SHIP_STATIC_DATA_REQUIRED_FIELDS` constant) at that point.
-  - Type 24 -> `StaticDataReport`, a partial-static-data variant (name, call
-    sign, type, dimensions only, no voyage data). VERIFIED to exist, exact
-    fields UNVERIFIED for the same reason as above.
+  - Type 1/2/3 -> `PositionReport` (fields include `Cog`, `Latitude`,
+    `Longitude`, `NavigationalStatus`, `Sog`, `TrueHeading`, `UserID`, among
+    others). VERIFIED against live traffic.
+  - Type 5 -> `ShipStaticData`. VERIFIED field names (captured live,
+    2026-07-22): `ImoNumber`, `CallSign`, `Destination`, `Dimension`
+    (`{A, B, C, D}`), `Eta` (`{Day, Hour, Minute, Month}`),
+    `MaximumStaticDraught`, `Name`, `Type` (ship type code — **not**
+    `ShipType` as originally assumed), plus `AisVersion`, `Dte`, `FixType`,
+    `MessageID`, `RepeatIndicator`, `Spare`, `UserID`, `Valid`.
+    `src/lng/ingest/aisstream.py::SHIP_STATIC_DATA_REQUIRED_FIELDS` was
+    corrected to match and is enforced by a schema-drift test that fails
+    loudly if any field is absent from a message.
+  - Also observed live: `StandardClassBPositionReport` (Type 18),
+    `StaticDataReport` (Type 24, split into `ReportA`/`ReportB`),
+    `BaseStationReport` (Type 4), `AssignedModeCommand` (Type 16), and an
+    `UnknownMessage` type (empty body) for AIS message types AISStream
+    doesn't yet decode. None of these are currently parsed by this
+    project's ingestion beyond `PositionReport` and `ShipStaticData`.
 - **Rate limits**: documentation states a client should be provisioned for
   roughly 300 messages/second if subscribed to the entire world, and that
   subscription updates are throttled to one per second. **No explicit

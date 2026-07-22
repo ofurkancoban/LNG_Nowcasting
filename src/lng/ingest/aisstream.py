@@ -1,8 +1,14 @@
 """Ingests AISStream.io messages into append-only, date/hour partitioned Parquet.
 
-Raw AIS timestamp format follows AISStream's Metadata.time_utc convention:
+Raw AIS timestamp format follows AISStream's MetaData.time_utc convention:
 "YYYY-MM-DD HH:MM:SS.nnnnnnnnn +0000 UTC". Only the leading 19 characters are
 parsed; the rest is nanosecond precision and timezone label we do not need.
+
+Schema note: the envelope's metadata key is `MetaData` (capital D), not
+`Metadata` as this project originally assumed from the documentation prose.
+Verified against real live traffic on 2026-07-22; the earlier assumption
+caused every single message to be silently classified as malformed. Also
+corrected: ShipStaticData's ship-type field is named `Type`, not `ShipType`.
 """
 
 from __future__ import annotations
@@ -33,19 +39,17 @@ DEFAULT_BOUNDING_BOXES: list[list[list[float]]] = [[[48.0, -6.0], [62.0, 10.0]]]
 
 logger = logging.getLogger(__name__)
 
-REQUIRED_ENVELOPE_KEYS = ("MessageType", "Message", "Metadata")
+REQUIRED_ENVELOPE_KEYS = ("MessageType", "Message", "MetaData")
 
 # Fields the ingestion pipeline commits to reading by name from a ShipStaticData
-# (AIS Type 5) message body, per docs/data_sources.md. These names are the best
-# available reading of AISStream's public documentation/message models; they
-# remain flagged UNVERIFIED against a live connection (see docs/data_sources.md)
-# until confirmed against real traffic. This list is the schema-drift contract:
+# (AIS Type 5) message body, per docs/data_sources.md. VERIFIED against real
+# live AISStream traffic on 2026-07-22. This list is the schema-drift contract:
 # if AISStream renames or drops one of these fields, ingestion must fail loudly
 # rather than silently writing nulls.
 SHIP_STATIC_DATA_REQUIRED_FIELDS = (
     "ImoNumber",
     "CallSign",
-    "ShipType",
+    "Type",
     "Dimension",
     "MaximumStaticDraught",
     "Destination",
@@ -113,10 +117,10 @@ def parse_message(raw_line: str) -> ParsedMessage | None:
         logger.warning("skipping malformed AIS line: missing required envelope key")
         return None
 
-    metadata = envelope["Metadata"]
+    metadata = envelope["MetaData"]
     message_type = envelope["MessageType"]
     if not isinstance(metadata, dict) or not isinstance(message_type, str):
-        logger.warning("skipping malformed AIS line: Metadata/MessageType wrong type")
+        logger.warning("skipping malformed AIS line: MetaData/MessageType wrong type")
         return None
 
     mmsi = metadata.get("MMSI")

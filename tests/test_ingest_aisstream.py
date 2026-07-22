@@ -28,7 +28,7 @@ def _valid_line(mmsi: int = 111222333) -> str:
         {
             "MessageType": "PositionReport",
             "Message": {"PositionReport": {"Latitude": 51.9, "Longitude": 4.1}},
-            "Metadata": {
+            "MetaData": {
                 "MMSI": mmsi,
                 "ShipName": "TEST SHIP",
                 "latitude": 51.9,
@@ -61,7 +61,7 @@ def test_parse_message_missing_mmsi_returns_none() -> None:
         {
             "MessageType": "PositionReport",
             "Message": {},
-            "Metadata": {"time_utc": "2024-03-01 00:00:00.000000000 +0000 UTC"},
+            "MetaData": {"time_utc": "2024-03-01 00:00:00.000000000 +0000 UTC"},
         }
     )
     assert parse_message(line) is None

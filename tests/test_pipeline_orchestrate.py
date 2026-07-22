@@ -37,14 +37,14 @@ def _static_data_line(mmsi: int, imo: int, draught: float, when: datetime) -> st
                 "ShipStaticData": {
                     "ImoNumber": imo,
                     "CallSign": "C1234",
-                    "ShipType": 80,
+                    "Type": 80,
                     "Dimension": {"A": 150, "B": 30, "C": 20, "D": 20},
                     "MaximumStaticDraught": draught,
                     "Destination": "ROTTERDAM",
                     "Eta": {"Month": 3, "Day": 1, "Hour": 0, "Minute": 0},
                 }
             },
-            "Metadata": {
+            "MetaData": {
                 "MMSI": mmsi,
                 "ShipName": "MOZAH",
                 "latitude": BERTH_POINT[1],
@@ -61,7 +61,7 @@ def _position_line(mmsi: int, lon: float, lat: float, when: datetime) -> str:
         {
             "MessageType": "PositionReport",
             "Message": {"PositionReport": {"Latitude": lat, "Longitude": lon}},
-            "Metadata": {
+            "MetaData": {
                 "MMSI": mmsi,
                 "ShipName": "MOZAH",
                 "latitude": lat,
