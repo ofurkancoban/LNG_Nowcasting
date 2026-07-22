@@ -31,6 +31,29 @@ import pyarrow.parquet as pq
 BASE_URL = "https://alsi.gie.eu/api"
 TEST_BASE_URL = "https://alsitest.gie.eu/api"
 
+# Known facility identifiers for the terminals this project's geofences and
+# FACILITY_TO_TERMINAL mapping (src/lng/pipeline/orchestrate.py) track,
+# verified via a live GET /api/about?show=listing call on 2026-07-22. The
+# EU-wide aggregate (--type eu) never returns per-facility rows, so any
+# per-terminal backtest requires fetching these individually.
+KNOWN_FACILITIES = {
+    "Gate Rotterdam": {
+        "country": "NL",
+        "company": "21X000000001063H",
+        "facility": "21W0000000000079",
+    },
+    "Zeebrugge": {
+        "country": "BE",
+        "company": "21X000000001006T",
+        "facility": "21W0000000001245",
+    },
+    "Wilhelmshaven": {
+        "country": "DE",
+        "company": "21X000000001403J",
+        "facility": "21W000000000129W",
+    },
+}
+
 REQUIRED_FIELDS = ("gasDayStart", "inventory", "sendOut", "dtmi", "dtrs", "status")
 
 
@@ -170,21 +193,52 @@ def main(argv: list[str] | None = None) -> int:
         description="Ingest a GIE ALSI report into a vintage snapshot."
     )
     parser.add_argument(
-        "--type", default="eu", choices=["eu", "ne", "ai"], help="ALSI report type parameter"
+        "--type", choices=["eu", "ne", "ai"], help="ALSI aggregate report type parameter"
+    )
+    parser.add_argument(
+        "--known-facilities",
+        action="store_true",
+        help="Fetch each terminal in KNOWN_FACILITIES individually instead of an aggregate.",
     )
     parser.add_argument("--out", required=True, type=Path, help="Output directory for snapshots")
     parser.add_argument(
         "--base-url", default=BASE_URL, help="ALSI API base URL (use TEST_BASE_URL to rehearse)"
     )
+    parser.add_argument(
+        "--from-date",
+        dest="from_date",
+        help="ALSI 'from' date filter (YYYY-MM-DD). Omitting pulls full history, which is slow.",
+    )
+    parser.add_argument("--to-date", dest="to_date", help="ALSI 'to' date filter (YYYY-MM-DD).")
     args = parser.parse_args(argv)
+
+    if not args.type and not args.known_facilities:
+        parser.error("either --type or --known-facilities is required")
 
     api_key = os.environ.get("ALSI_API_KEY")
     if not api_key:
         parser.error("ALSI_API_KEY environment variable must be set")
 
-    fetch_page = make_httpx_page_fetcher(args.base_url, api_key, {"type": args.type, "size": 300})
-    raw_entries = fetch_all_pages(fetch_page)
-    rows = rows_from_response({"data": raw_entries})
+    date_params: dict[str, Any] = {}
+    if args.from_date:
+        date_params["from"] = args.from_date
+    if args.to_date:
+        date_params["to"] = args.to_date
+
+    rows: list[dict[str, Any]] = []
+    if args.known_facilities:
+        for params in KNOWN_FACILITIES.values():
+            fetch_page = make_httpx_page_fetcher(
+                args.base_url, api_key, {**params, **date_params, "size": 300}
+            )
+            raw_entries = fetch_all_pages(fetch_page)
+            rows.extend(rows_from_response({"data": raw_entries}))
+    else:
+        fetch_page = make_httpx_page_fetcher(
+            args.base_url, api_key, {"type": args.type, **date_params, "size": 300}
+        )
+        raw_entries = fetch_all_pages(fetch_page)
+        rows = rows_from_response({"data": raw_entries})
 
     built_at = datetime.now(UTC)
     snapshot_dir = write_vintage_snapshot(rows, args.out, built_at)
