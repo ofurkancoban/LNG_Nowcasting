@@ -1,4 +1,4 @@
 name: marts_backtest
-type: duckdb
+type: motherduck
 options:
-  filename: marts_backtest.duckdb
+  database: lng_nowcasting

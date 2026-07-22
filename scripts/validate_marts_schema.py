@@ -2,20 +2,24 @@
 missing or malformed, per docs/milestones/M6.md's acceptance criteria.
 
 Run before the Evidence.dev dashboard build (wired as dashboard/package.json's
-"prebuild" script) so a missing or invalid backtest metrics artifact stops the
-build instead of silently rendering an empty page.
+"prebuild" script) so a missing, empty, or invalid backtest metrics table
+stops the build instead of silently rendering an empty page.
+
+Reads from MotherDuck (the dashboard's live data source, per the
+docs/decisions/0001-architecture.md dashboard-hosting follow-up), not the
+local marts/backtest/*.parquet files used before that migration.
 """
 
 from __future__ import annotations
 
+import os
 import sys
-from pathlib import Path
 
-import pandas as pd
+import duckdb
 import pandera.pandas as pa
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-BACKTEST_METRICS_GLOB = "marts/backtest/metrics_*.parquet"
+DATABASE = "lng_nowcasting"
+TABLE = "backtest_metrics"
 
 METRICS_SCHEMA = pa.DataFrameSchema(
     {
@@ -32,17 +36,34 @@ METRICS_SCHEMA = pa.DataFrameSchema(
 
 
 def main() -> int:
-    matches = sorted(REPO_ROOT.glob(BACKTEST_METRICS_GLOB))
-    if not matches:
+    token = os.environ.get("MOTHERDUCK_TOKEN")
+    if not token:
+        print("ERROR: MOTHERDUCK_TOKEN environment variable is not set.", file=sys.stderr)
+        return 1
+
+    con = duckdb.connect(f"md:{DATABASE}?motherduck_token={token}")
+    try:
+        tables = {row[0] for row in con.execute("SHOW TABLES").fetchall()}
+        if TABLE not in tables:
+            print(
+                f"ERROR: table {TABLE!r} does not exist in MotherDuck database {DATABASE!r}. "
+                "Run the orchestrator (src/lng/pipeline/orchestrate.py --motherduck) at least "
+                "once before building the dashboard.",
+                file=sys.stderr,
+            )
+            return 1
+
+        df = con.execute(f"SELECT * FROM {TABLE}").df()  # noqa: S608 -- fixed identifiers, no user input
+    finally:
+        con.close()
+
+    if len(df) == 0:
         print(
-            f"ERROR: no backtest metrics files found matching {BACKTEST_METRICS_GLOB}. "
-            "Run the M5 backtest harness (src/lng/nowcast/backtest.py) before building "
-            "the dashboard.",
+            f"ERROR: table {TABLE!r} exists but has zero rows. Run the orchestrator against "
+            "real data before building the dashboard, rather than showing an empty page.",
             file=sys.stderr,
         )
         return 1
-
-    df = pd.concat([pd.read_parquet(path) for path in matches], ignore_index=True)
 
     try:
         METRICS_SCHEMA.validate(df)
@@ -50,7 +71,7 @@ def main() -> int:
         print(f"ERROR: backtest metrics failed schema validation: {exc}", file=sys.stderr)
         return 1
 
-    print(f"OK: validated {len(matches)} metrics file(s), {len(df)} total rows.")
+    print(f"OK: validated {TABLE!r}, {len(df)} total rows.")
     return 0
 
 

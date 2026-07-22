@@ -267,10 +267,16 @@ def main(argv: list[str] | None = None) -> int:
     """CLI entrypoint: runs the full pipeline and writes a metrics snapshot.
 
     Not exercised against real ingested data by any test (tests/test_pipeline_orchestrate.py
-    exercises run_pipeline() directly against synthetic fixtures); this is the
-    entrypoint .github/workflows/nowcast-build.yml's placeholder step should
-    eventually call once real raw AIS and ALSI data exist on disk.
+    exercises run_pipeline() directly against synthetic fixtures). Wired into
+    .github/workflows/nowcast-build.yml. With --motherduck, also appends the
+    run's metrics to the hosted MotherDuck table the dashboard reads from
+    live (see docs/decisions/0001-architecture.md's dashboard-hosting
+    follow-up); without it, only the local Parquet snapshot is written.
     """
+    import os
+
+    from lng.nowcast.backtest import write_metrics_motherduck
+
     parser = argparse.ArgumentParser(
         description="Run the full ingestion-to-backtest pipeline and write a metrics snapshot."
     )
@@ -278,6 +284,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--alsi-dir", required=True, type=Path)
     parser.add_argument("--out", required=True, type=Path, help="marts/backtest output directory")
     parser.add_argument("--run-id", required=True)
+    parser.add_argument(
+        "--motherduck",
+        action="store_true",
+        help="Also append metrics to MotherDuck (reads MOTHERDUCK_TOKEN env var).",
+    )
     args = parser.parse_args(argv)
 
     folds = run_pipeline(args.raw_ais_dir, args.alsi_dir, now=datetime.now())
@@ -287,6 +298,14 @@ def main(argv: list[str] | None = None) -> int:
 
     path = write_metrics_parquet(folds, args.run_id, args.out)
     print(f"folds={len(folds)} metrics={path}")
+
+    if args.motherduck:
+        token = os.environ.get("MOTHERDUCK_TOKEN")
+        if not token:
+            parser.error("--motherduck requires the MOTHERDUCK_TOKEN environment variable")
+        n = write_metrics_motherduck(folds, args.run_id, token)
+        print(f"motherduck_rows_written={n}")
+
     return 0
 
 

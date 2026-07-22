@@ -121,3 +121,56 @@ def write_metrics_parquet(folds: list[BacktestFold], run_id: str, out_dir: Path)
     table = pa.Table.from_pylist(rows)
     pq.write_table(table, path)
     return path
+
+
+def write_metrics_motherduck(
+    folds: list[BacktestFold],
+    run_id: str,
+    motherduck_token: str,
+    database: str = "lng_nowcasting",
+    table: str = "backtest_metrics",
+) -> int:
+    """Appends this run's metrics rows to a MotherDuck table.
+
+    Never overwrites prior runs: each call inserts new rows keyed by
+    run_id, so the dashboard's live query can always read the latest state
+    without any local Parquet file or rebuild step, per the decision to
+    move the dashboard's data source to a hosted database (see
+    docs/decisions/0001-architecture.md follow-up on live dashboard hosting).
+    Creates the table on first use if it does not already exist.
+    """
+    import duckdb
+    import pandas as pd
+
+    rows = build_metrics_rows(folds, run_id)
+    df = pd.DataFrame(rows)  # noqa: F841 -- referenced by name in the SQL replacement scan below
+
+    con = duckdb.connect(f"md:{database}?motherduck_token={motherduck_token}")
+    try:
+        con.execute(
+            f"""
+            CREATE TABLE IF NOT EXISTS {table} (
+                run_id VARCHAR,
+                terminal VARCHAR,
+                gas_day VARCHAR,
+                predicted_gwh DOUBLE,
+                actual_gwh DOUBLE,
+                abs_error_gwh DOUBLE,
+                mae DOUBLE,
+                mape DOUBLE,
+                written_at TIMESTAMP DEFAULT current_timestamp
+            )
+            """
+        )
+        con.execute(
+            f"""
+            INSERT INTO {table}
+                (run_id, terminal, gas_day, predicted_gwh, actual_gwh, abs_error_gwh, mae, mape)
+            SELECT run_id, terminal, gas_day, predicted_gwh, actual_gwh, abs_error_gwh, mae, mape
+            FROM df
+            """
+        )
+    finally:
+        con.close()
+
+    return len(rows)
