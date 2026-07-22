@@ -103,7 +103,14 @@ session.
   `sendOut` (GWh/d), `dtmi` (Declared Total Maximum Inventory = storage
   capacity), `dtrs` (Declared Total Reference Send-out = send-out capacity),
   plus a per-dataset status flag (E = estimated, C = confirmed, N = no data)
-  and an `info` field linking to any relevant Service Announcement. VERIFIED.
+  and an `info` field linking to any relevant Service Announcement. VERIFIED,
+  **except** the exact field name for the status flag: the GIE API manual's
+  ALSI field table (section 2.4) does not itself list a status field name
+  (unlike the AGSI table, which explicitly names `status`); the existence of
+  a quality indicator is only described in prose (section 3.1). M4's
+  ingestion code assumes the field is named `status`, matching AGSI's
+  naming, but this specific name is UNVERIFIED against a live ALSI response
+  and should be confirmed before production use.
 - **Historical depth**: since 2012-01-01 or the terminal's commissioning
   date, whichever is later. Not every LSO backfilled its full history
   equally; check `/api/news` and the per-facility start date rather than

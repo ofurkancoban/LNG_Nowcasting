@@ -1,0 +1,30 @@
+{
+  "last_page": 1,
+  "total": 2,
+  "dataset": "EU",
+  "gas_day": "2024-03-01",
+  "data": [
+    {
+      "name": "Gate terminal",
+      "code": "21Z0000000000082X",
+      "url": "nl-gate",
+      "gasDayStart": "2024-03-01",
+      "inventory": 145.32,
+      "sendOut": 210.5,
+      "dtmi": 180.0,
+      "dtrs": 300.0,
+      "status": "C"
+    },
+    {
+      "name": "Zeebrugge LNG terminal",
+      "code": "21Z0000000000082Y",
+      "url": "be-zeebrugge",
+      "gasDayStart": "2024-03-01",
+      "inventory": 98.7,
+      "sendOut": 150.2,
+      "dtmi": 160.0,
+      "dtrs": 250.0,
+      "status": "C"
+    }
+  ]
+}
