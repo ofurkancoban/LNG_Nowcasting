@@ -11,30 +11,23 @@ was scored only against the ALSI vintage that existed as of its prediction
 date; no fold uses a later, hindsight-corrected ALSI revision (ADR 0001,
 Decision 4).
 
-```sql fold_detail
+```sql summary
 select
-    run_id,
-    terminal,
-    gas_day,
-    predicted_gwh,
-    actual_gwh,
-    abs_error_gwh,
-    mae,
-    mape
+    count(*) as n_folds,
+    avg(mae) as mae_gwh,
+    avg(mape) as mape_pct,
+    max(abs_error_gwh) as worst_error_gwh
 from marts_backtest.backtest_metrics
-order by terminal, gas_day
 ```
 
-<DataTable data={fold_detail} rows=20>
-    <Column id=run_id/>
-    <Column id=terminal/>
-    <Column id=gas_day/>
-    <Column id=predicted_gwh title="Predicted (GWh/d)" fmt="num2"/>
-    <Column id=actual_gwh title="Actual (GWh/d)" fmt="num2"/>
-    <Column id=abs_error_gwh title="Abs. error (GWh/d)" fmt="num2"/>
-    <Column id=mae title="MAE (aggregate)" fmt="num2"/>
-    <Column id=mape title="MAPE % (aggregate)" fmt="num1"/>
-</DataTable>
+<Grid cols=4>
+    <BigValue data={summary} value=n_folds title="Folds scored"/>
+    <BigValue data={summary} value=mae_gwh title="MAE" fmt="num2" description="GWh/d"/>
+    <BigValue data={summary} value=mape_pct title="MAPE" fmt="num1" description="%"/>
+    <BigValue data={summary} value=worst_error_gwh title="Worst single-day error" fmt="num2" description="GWh/d"/>
+</Grid>
+
+## Daily absolute error
 
 ```sql daily_error
 select
@@ -51,11 +44,40 @@ order by gas_day
     y=abs_error_gwh
     series=terminal
     title="Absolute backtest error by gas day"
+    yAxisTitle="Abs. error (GWh/d)"
 />
 
-<Alert status="info">
+## Fold detail
+
+```sql fold_detail
+select
+    run_id,
+    terminal,
+    gas_day,
+    predicted_gwh,
+    actual_gwh,
+    abs_error_gwh
+from marts_backtest.backtest_metrics
+order by terminal, gas_day
+```
+
+<DataTable data={fold_detail} rows=20 rowShading=true search=true>
+    <Column id=run_id title="Run"/>
+    <Column id=terminal title="Terminal"/>
+    <Column id=gas_day title="Gas day"/>
+    <Column id=predicted_gwh title="Predicted (GWh/d)" fmt="num2"/>
+    <Column id=actual_gwh title="Actual (GWh/d)" fmt="num2"/>
+    <Column id=abs_error_gwh title="Abs. error (GWh/d)" fmt="num2" contentType=colorscale colorScale=reds/>
+</DataTable>
+
+<Alert status="warning">
+
+**These numbers are a demonstration, not a validated production result.**
 The nowcast model's cargo-to-energy conversion factor
 (`APPROXIMATE_GWH_PER_CBM` in `src/lng/nowcast/model.py`) is an
-uncalibrated approximation. Treat MAE/MAPE here as evidence the backtest
-harness works end to end, not as validated production accuracy.
+uncalibrated approximation, and the current data behind this page comes
+from a manually-constructed backtest run used to prove the pipeline works
+end to end. Treat MAE/MAPE here as evidence the harness is wired correctly,
+not as evidence of real-world accuracy.
+
 </Alert>
