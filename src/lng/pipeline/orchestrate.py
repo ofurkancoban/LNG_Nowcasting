@@ -65,6 +65,32 @@ def load_raw_ais_rows(raw_dir: Path) -> list[dict[str, Any]]:
     return dataset.to_table().to_pylist()  # type: ignore[no-any-return]
 
 
+def load_raw_ais_rows_motherduck(
+    motherduck_token: str, database: str = "lng_nowcasting", table: str = "raw_aisstream"
+) -> list[dict[str, Any]]:
+    """Reads every row from the MotherDuck raw_aisstream table.
+
+    This is the GitHub-Actions-reachable equivalent of load_raw_ais_rows:
+    since GitHub Actions runners have no access to the VPS's local disk,
+    reading from the dual-written MotherDuck copy (see
+    src/lng/ingest/aisstream.py::write_rows_motherduck) is how the
+    orchestrator runs there instead of requiring an SSH-based file sync.
+    """
+    import duckdb
+
+    con = duckdb.connect(f"md:{database}?motherduck_token={motherduck_token}")
+    try:
+        tables = {row[0] for row in con.execute("SHOW TABLES").fetchall()}
+        if table not in tables:
+            return []
+        result: list[dict[str, Any]] = con.execute(f"SELECT * FROM {table}").df().to_dict(  # noqa: S608
+            "records"
+        )
+    finally:
+        con.close()
+    return result
+
+
 def extract_static_data(rows: list[dict[str, Any]]) -> dict[int, list[StaticDataReading]]:
     """Builds a per-MMSI, time-ordered list of static draught readings.
 
@@ -216,21 +242,69 @@ def load_alsi_vintages_by_terminal(
     return vintages_by_terminal
 
 
-def run_pipeline(
-    raw_ais_dir: Path,
-    alsi_dir: Path,
+def load_alsi_vintages_from_motherduck(
+    motherduck_token: str,
+    database: str = "lng_nowcasting",
+    table: str = "raw_alsi",
+    facility_to_terminal: dict[str, str] | None = None,
+) -> dict[str, list[AlsiVintage]]:
+    """Reads every row from the MotherDuck raw_alsi table and groups them
+    into per-terminal AlsiVintage lists, mirroring
+    load_alsi_vintages_by_terminal's local-file logic but sourced from the
+    dual-written MotherDuck copy (see
+    src/lng/ingest/alsi.py::write_vintage_motherduck).
+    """
+    import duckdb
+
+    mapping = facility_to_terminal or FACILITY_TO_TERMINAL
+    con = duckdb.connect(f"md:{database}?motherduck_token={motherduck_token}")
+    try:
+        tables = {row[0] for row in con.execute("SHOW TABLES").fetchall()}
+        if table not in tables:
+            return {}
+        rows: list[dict[str, Any]] = con.execute(f"SELECT * FROM {table}").df().to_dict(  # noqa: S608
+            "records"
+        )
+    finally:
+        con.close()
+
+    by_built_at: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        by_built_at.setdefault(row["built_at"], []).append(row)
+
+    vintages_by_terminal: dict[str, list[AlsiVintage]] = {}
+    for built_at_str, vintage_rows in by_built_at.items():
+        built_at = datetime.fromisoformat(built_at_str)
+        rows_by_terminal: dict[str, list[dict[str, Any]]] = {}
+        for row in vintage_rows:
+            terminal = mapping.get(row["facility"])
+            if terminal is None:
+                continue
+            rows_by_terminal.setdefault(terminal, []).append(row)
+
+        for terminal, terminal_rows in rows_by_terminal.items():
+            vintages_by_terminal.setdefault(terminal, []).append(
+                AlsiVintage(built_at=built_at, rows=terminal_rows)
+            )
+
+    return vintages_by_terminal
+
+
+def _run_pipeline_core(
+    rows: list[dict[str, Any]],
+    vintages_by_terminal: dict[str, list[AlsiVintage]],
     now: datetime,
     registry: VesselRegistry | None = None,
     terminals: list[TerminalGeofence] | None = None,
 ) -> list[BacktestFold]:
-    """Runs the full ingestion-to-backtest pipeline against already-ingested
-    raw AIS and ALSI vintage data, returning the resulting backtest folds.
+    """Shared pipeline body: matches vessels, detects arrivals, estimates
+    delivered volume, and backtests against ALSI vintages, regardless of
+    whether the raw rows/vintages came from local files or MotherDuck.
     """
     registry = registry or VesselRegistry()
     all_terminals = terminals or load_terminal_geofences()
     real_terminals = [t for t in all_terminals if not t.name.startswith("TEST_")]
 
-    rows = load_raw_ais_rows(raw_ais_dir)
     static_data = extract_static_data(rows)
     positions = build_position_samples(rows)
     matched = match_lng_carriers(static_data, registry)
@@ -253,22 +327,60 @@ def run_pipeline(
         {"terminal": terminal, "gas_day": gas_day, "as_of": now, "predicted_gwh": gwh}
         for (terminal, gas_day), gwh in nowcast.items()
     ]
-
-    vintages_by_terminal = load_alsi_vintages_by_terminal(alsi_dir)
     predictions = [p for p in predictions if p["terminal"] in vintages_by_terminal]
 
     return run_backtest(predictions, vintages_by_terminal)
+
+
+def run_pipeline(
+    raw_ais_dir: Path,
+    alsi_dir: Path,
+    now: datetime,
+    registry: VesselRegistry | None = None,
+    terminals: list[TerminalGeofence] | None = None,
+) -> list[BacktestFold]:
+    """Runs the full ingestion-to-backtest pipeline against already-ingested
+    local raw AIS and ALSI vintage Parquet files.
+    """
+    rows = load_raw_ais_rows(raw_ais_dir)
+    vintages_by_terminal = load_alsi_vintages_by_terminal(alsi_dir)
+    return _run_pipeline_core(rows, vintages_by_terminal, now, registry, terminals)
+
+
+def run_pipeline_motherduck(
+    motherduck_token: str,
+    now: datetime,
+    registry: VesselRegistry | None = None,
+    terminals: list[TerminalGeofence] | None = None,
+) -> list[BacktestFold]:
+    """Runs the full ingestion-to-backtest pipeline reading raw AIS and ALSI
+    data from MotherDuck instead of local files. This is what lets
+    .github/workflows/nowcast-build.yml run the orchestrator on a GitHub
+    Actions runner, which has no access to the VPS's local disk.
+    """
+    rows = load_raw_ais_rows_motherduck(motherduck_token)
+    vintages_by_terminal = load_alsi_vintages_from_motherduck(motherduck_token)
+    return _run_pipeline_core(rows, vintages_by_terminal, now, registry, terminals)
 
 
 def main(argv: list[str] | None = None) -> int:
     """CLI entrypoint: runs the full pipeline and writes a metrics snapshot.
 
     Not exercised against real ingested data by any test (tests/test_pipeline_orchestrate.py
-    exercises run_pipeline() directly against synthetic fixtures). Wired into
-    .github/workflows/nowcast-build.yml. With --motherduck, also appends the
-    run's metrics to the hosted MotherDuck table the dashboard reads from
-    live (see docs/decisions/0001-architecture.md's dashboard-hosting
-    follow-up); without it, only the local Parquet snapshot is written.
+    exercises run_pipeline()/run_pipeline_motherduck() directly against
+    synthetic fixtures). Wired into .github/workflows/nowcast-build.yml.
+
+    --source local reads raw/ais and raw/alsi from local Parquet (VPS usage,
+    where the ingesters write directly to disk). --source motherduck reads
+    the same data from the dual-written MotherDuck tables instead, which is
+    what lets this run on a GitHub Actions runner with no access to the
+    VPS's local disk or any SSH-based file sync (see ADR 0001 Decision 5).
+
+    With --motherduck, also appends the run's metrics to the hosted
+    MotherDuck table the dashboard reads from live; without it, only the
+    local Parquet snapshot is written (only meaningful with --source local,
+    since --source motherduck has no local raw data to write metrics next to
+    anyway unless --out is also given).
     """
     import os
 
@@ -277,9 +389,15 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Run the full ingestion-to-backtest pipeline and write a metrics snapshot."
     )
-    parser.add_argument("--raw-ais-dir", required=True, type=Path)
-    parser.add_argument("--alsi-dir", required=True, type=Path)
-    parser.add_argument("--out", required=True, type=Path, help="marts/backtest output directory")
+    parser.add_argument(
+        "--source",
+        choices=["local", "motherduck"],
+        default="local",
+        help="Where to read raw AIS/ALSI data from (default: local).",
+    )
+    parser.add_argument("--raw-ais-dir", type=Path, help="Required when --source local")
+    parser.add_argument("--alsi-dir", type=Path, help="Required when --source local")
+    parser.add_argument("--out", type=Path, help="marts/backtest output directory")
     parser.add_argument("--run-id", required=True)
     parser.add_argument(
         "--motherduck",
@@ -288,13 +406,25 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    folds = run_pipeline(args.raw_ais_dir, args.alsi_dir, now=datetime.now())
+    if args.source == "local":
+        if args.raw_ais_dir is None or args.alsi_dir is None:
+            parser.error("--source local requires --raw-ais-dir and --alsi-dir")
+        folds = run_pipeline(args.raw_ais_dir, args.alsi_dir, now=datetime.now())
+    else:
+        token = os.environ.get("MOTHERDUCK_TOKEN")
+        if not token:
+            parser.error("--source motherduck requires the MOTHERDUCK_TOKEN environment variable")
+        folds = run_pipeline_motherduck(token, now=datetime.now())
+
     if not folds:
         print("No backtest folds produced: no matched LNG carrier arrivals or ALSI vintages.")
         return 1
 
-    path = write_metrics_parquet(folds, args.run_id, args.out)
-    print(f"folds={len(folds)} metrics={path}")
+    if args.out is not None:
+        path = write_metrics_parquet(folds, args.run_id, args.out)
+        print(f"folds={len(folds)} metrics={path}")
+    else:
+        print(f"folds={len(folds)}")
 
     if args.motherduck:
         token = os.environ.get("MOTHERDUCK_TOKEN")

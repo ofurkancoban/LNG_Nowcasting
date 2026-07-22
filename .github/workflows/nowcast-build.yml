@@ -35,31 +35,46 @@ jobs:
       - name: Run data quality checks and full test suite
         run: uv run pytest tests/
 
-      - name: Download raw ALSI snapshot from the triggering ingest run
-        if: github.event_name == 'workflow_run'
-        uses: actions/download-artifact@v4
-        with:
-          name: alsi-raw-snapshot-${{ github.event.workflow_run.id }}
-          path: raw
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          run-id: ${{ github.event.workflow_run.id }}
-
       - name: Run orchestrator (ingestion -> nowcast -> backtest)
+        env:
+          MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
         run: |
           uv run python -m lng.pipeline.orchestrate \
-            --raw-ais-dir raw \
-            --alsi-dir raw \
-            --out marts/backtest \
-            --run-id "${{ github.run_id }}"
-        # This genuinely runs src/lng/pipeline/orchestrate.py end to end
-        # (added after M7, see docs/progress/M7.md's follow-up note). It
-        # will legitimately exit 1 with "No backtest folds produced" until
-        # raw AIS data from the VPS ingester (deploy/README.md) is synced
-        # into this workflow by some future step; that sync mechanism does
-        # not exist yet and is flagged here rather than silently assumed.
+            --source motherduck \
+            --run-id "${{ github.run_id }}" \
+            --motherduck
+        # Reads raw AIS/ALSI directly from MotherDuck (dual-written by the
+        # VPS ingesters and the Ingest ALSI workflow, see ADR 0001 Decision
+        # 5) instead of needing an SSH-based file sync from the VPS's local
+        # disk, which GitHub Actions runners have no access to. --motherduck
+        # appends this run's metrics back to MotherDuck for the dashboard.
 
       - name: Build dashboard
         working-directory: dashboard
+        env:
+          MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
+          EVIDENCE_SOURCE__marts_backtest__token: ${{ secrets.MOTHERDUCK_TOKEN }}
         run: |
           npm install
           npm run build
+
+      - name: Deploy dashboard to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard/build
+
+  deploy-pages:
+    needs: build-and-backtest
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
