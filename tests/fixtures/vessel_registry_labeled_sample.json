@@ -1,0 +1,12 @@
+[
+  {"imo": 9337755, "name": "Mozah", "expected_lng_carrier": true},
+  {"imo": 9780354, "name": "Hoegh Esperanza", "expected_lng_carrier": true},
+  {"imo": 9320075, "name": "Gaselys", "expected_lng_carrier": true},
+  {"imo": 5412583, "name": "Methane Princess", "expected_lng_carrier": true},
+  {"imo": 9713105, "name": "MOL FSRU Challenger", "expected_lng_carrier": true},
+  {"imo": 7360124, "name": "MV Gastor", "expected_lng_carrier": true},
+  {"imo": 9999901, "name": "TEST TANKER A (fixture-only, not a real vessel)", "expected_lng_carrier": false},
+  {"imo": 9999902, "name": "TEST TANKER B (fixture-only, not a real vessel)", "expected_lng_carrier": false},
+  {"imo": 9999903, "name": "TEST BULK CARRIER (fixture-only, not a real vessel)", "expected_lng_carrier": false},
+  {"imo": 9999904, "name": "TEST CONTAINER SHIP (fixture-only, not a real vessel)", "expected_lng_carrier": false}
+]
