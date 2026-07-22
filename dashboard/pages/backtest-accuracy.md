@@ -2,8 +2,6 @@
 title: Backtest Accuracy
 ---
 
-# Backtest Accuracy
-
 How well the nowcast model predicts LNG deliveries, compared day by day
 against official GIE ALSI figures.
 

@@ -5,6 +5,6 @@
 	export let data;
 </script>
 
-<EvidenceDefaultLayout {data} title="LNG Nowcaster" builtWithEvidence={false}>
+<EvidenceDefaultLayout {data} title="LNG Nowcaster" builtWithEvidence={false} neverShowQueries={true}>
 	<slot slot="content" />
 </EvidenceDefaultLayout>

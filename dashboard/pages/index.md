@@ -2,8 +2,6 @@
 title: LNG Nowcast Overview
 ---
 
-# European LNG Import Nowcast
-
 Estimated LNG deliveries per terminal, detected from AIS carrier movements
 and validated against official GIE ALSI data. See
 [Backtest Accuracy](/backtest-accuracy) for details, or the

@@ -2,8 +2,6 @@
 title: Live Vessel Tracker
 ---
 
-# Live Vessel Tracker
-
 Most recently observed position for each tracked LNG carrier.
 
 ```sql vessel_positions
@@ -40,7 +38,7 @@ order by vessel_name
     <Column id=vessel_name title="Vessel"/>
     <Column id=mmsi title="MMSI"/>
     <Column id=imo title="IMO"/>
-    <Column id=latitude fmt="num4"/>
-    <Column id=longitude fmt="num4"/>
+    <Column id=latitude title="Latitude" fmt="num4"/>
+    <Column id=longitude title="Longitude" fmt="num4"/>
     <Column id=received_at title="Last position (UTC)"/>
 </DataTable>
