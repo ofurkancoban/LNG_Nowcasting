@@ -30,7 +30,16 @@ jobs:
       - name: Ingest ALSI facility reports
         env:
           ALSI_API_KEY: ${{ secrets.ALSI_API_KEY }}
-        run: uv run python -m lng.ingest.alsi --type eu --out raw
+          MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
+        run: |
+          FROM_DATE=$(date -u -d '3 days ago' +%Y-%m-%d)
+          TO_DATE=$(date -u +%Y-%m-%d)
+          uv run python -m lng.ingest.alsi \
+            --known-facilities \
+            --from-date "$FROM_DATE" \
+            --to-date "$TO_DATE" \
+            --out raw \
+            --motherduck
 
       - name: Upload raw ALSI snapshot
         uses: actions/upload-artifact@v4
