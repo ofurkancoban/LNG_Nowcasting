@@ -20,8 +20,9 @@ Known approximations, flagged rather than hidden:
   `FACILITY_TO_TERMINAL` below. Verified against a real
   GET /api/about?show=listing response on 2026-07-22: Rotterdam Gate
   Terminal is `21W0000000000079`, Zeebrugge LNG Terminal is
-  `21W0000000001245`. Only covers these two terminals; extend this mapping
-  before scoring against additional European LNG terminals.
+  `21W0000000001245`, Wilhelmshaven LNG Terminal 1 (FSRU Hoegh Esperanza) is
+  `21W000000000129W`. Only covers these three terminals; extend this
+  mapping before scoring against additional European LNG terminals.
 """
 
 from __future__ import annotations
@@ -47,8 +48,9 @@ from lng.vessels.registry import VesselRecord, VesselRegistry
 # the fixture codes used in tests; must be extended with real EIC codes
 # before use against real ALSI data (see module docstring).
 FACILITY_TO_TERMINAL = {
-    "21W0000000000079": "Gate Rotterdam",  # Rotterdam Gate Terminal, verified via
-    "21W0000000001245": "Zeebrugge",  # /api/about?show=listing on 2026-07-22
+    "21W0000000000079": "Gate Rotterdam",  # verified via
+    "21W0000000001245": "Zeebrugge",  # /api/about?show=listing
+    "21W000000000129W": "Wilhelmshaven",  # on 2026-07-22
 }
 
 

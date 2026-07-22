@@ -44,6 +44,31 @@
     {
       "type": "Feature",
       "properties": {
+        "terminal": "Wilhelmshaven",
+        "zone": "approach",
+        "is_test_fixture": false,
+        "note": "FSRU Hoegh Esperanza mooring at Voslapper Groden. Coordinates centered on the vessel's actual observed AIS position (53.6417, 8.11145), independently cross-checked against MyShipTracking on 2026-07-22; ALSI's own facility listing coordinate (53.5224, 8.1519) appears to be an imprecise directory marker, not the real jetty location."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [7.950, 53.550], [8.270, 53.550], [8.270, 53.730], [7.950, 53.730], [7.950, 53.550]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "terminal": "Wilhelmshaven", "zone": "berth", "is_test_fixture": false },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [8.095, 53.635], [8.130, 53.635], [8.130, 53.650], [8.095, 53.650], [8.095, 53.635]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "terminal": "TEST_ANTIMERIDIAN_FIXTURE",
         "zone": "approach",
         "is_test_fixture": true,
