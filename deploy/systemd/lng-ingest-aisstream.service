@@ -1,0 +1,18 @@
+[Unit]
+Description=LNG Nowcaster AIS ingestion (AISStream.io WebSocket client)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=lng
+WorkingDirectory=/opt/lng-nowcasting
+EnvironmentFile=/opt/lng-nowcasting/.env
+ExecStart=/opt/lng-nowcasting/.venv/bin/python -m lng.ingest.aisstream --live --out /opt/lng-nowcasting/raw
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

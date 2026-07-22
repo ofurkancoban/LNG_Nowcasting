@@ -8,10 +8,13 @@ parsed; the rest is nanosecond precision and timezone label we do not need.
 from __future__ import annotations
 
 import argparse
+import asyncio
 import hashlib
 import json
 import logging
-from collections.abc import Callable, Iterable, Iterator
+import os
+import uuid
+from collections.abc import AsyncIterator, Callable, Iterable, Iterator
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
@@ -19,6 +22,14 @@ from typing import Any
 
 import pyarrow as pa
 import pyarrow.parquet as pq
+import websockets
+
+AISSTREAM_WS_URL = "wss://stream.aisstream.io/v0/stream"
+
+# Rough bounding box covering the North Sea / Northwest European coast, where
+# the terminals in data/reference/terminal_geofences.geojson are located.
+# [[lat, lon], [lat, lon]] per AISStream's subscription format.
+DEFAULT_BOUNDING_BOXES: list[list[list[float]]] = [[[48.0, -6.0], [62.0, 10.0]]]
 
 logger = logging.getLogger(__name__)
 
@@ -200,6 +211,104 @@ def write_parquet(rows: list[dict[str, Any]], out_dir: Path) -> int:
     return total_written
 
 
+def append_parquet_partition(rows: list[dict[str, Any]], out_dir: Path) -> int:
+    """Appends rows as a new uniquely-named file per date/hour partition.
+
+    Unlike write_parquet() (which recomputes and overwrites, appropriate for
+    a full fixture replay per ADR 0001 Decision 3), this never deletes
+    existing partition files: each call adds one new file, which is the
+    safe pattern for continuous live-stream flushing where each flush's
+    rows are disjoint in time from prior flushes.
+    """
+    partitions: dict[tuple[str, int], list[dict[str, Any]]] = {}
+    for row in rows:
+        key = (row["ingest_date"], row["hour"])
+        partitions.setdefault(key, []).append(row)
+
+    total_written = 0
+    for (ingest_date, hour), partition_rows in partitions.items():
+        partition_dir = (
+            out_dir / "source=aisstream" / f"ingest_date={ingest_date}" / f"hour={hour:02d}"
+        )
+        partition_dir.mkdir(parents=True, exist_ok=True)
+        filename = f"part-{uuid.uuid4().hex}.parquet"
+        table = pa.Table.from_pylist(partition_rows)
+        pq.write_table(table, partition_dir / filename)
+        total_written += len(partition_rows)
+
+    return total_written
+
+
+async def _live_message_lines(
+    api_key: str, bounding_boxes: list[list[list[float]]]
+) -> AsyncIterator[str]:
+    """Yields raw text lines from a live AISStream subscription.
+
+    Not exercised by any test: doing so would require a live network
+    connection, which the project's test rules forbid. This exists for the
+    production deployment described in deploy/README.md and
+    deploy/systemd/lng-ingest-aisstream.service, and has not itself been
+    run against the real AISStream service this session (see
+    docs/data_sources.md's UNVERIFIED note on AISStream's exact schema).
+    """
+    async with websockets.connect(AISSTREAM_WS_URL) as connection:
+        await connection.send(json.dumps({"APIKey": api_key, "BoundingBoxes": bounding_boxes}))
+        try:
+            async for message in connection:
+                yield message if isinstance(message, str) else message.decode("utf-8")
+        except websockets.exceptions.ConnectionClosed as exc:
+            raise ConnectionClosed(str(exc)) from exc
+
+
+async def run_live_async(
+    api_key: str,
+    out_dir: Path,
+    bounding_boxes: list[list[list[float]]] | None = None,
+    flush_every: int = 500,
+) -> None:
+    """Continuously ingests a live AISStream subscription into raw Parquet.
+
+    Reconnects on ConnectionClosed indefinitely (AISStream has no
+    resume/backfill, per docs/data_sources.md, so a reconnect only resumes
+    from whatever the service sends next). Flushes every `flush_every`
+    messages using the append-only writer, never the overwrite-recompute one.
+    """
+    boxes = bounding_boxes or DEFAULT_BOUNDING_BOXES
+    buffer: list[str] = []
+
+    while True:
+        try:
+            async for line in _live_message_lines(api_key, boxes):
+                buffer.append(line)
+                if len(buffer) >= flush_every:
+                    _flush_live_buffer(buffer, out_dir)
+                    buffer = []
+        except ConnectionClosed:
+            logger.warning("AIS live connection closed, reconnecting")
+            continue
+
+
+def _flush_live_buffer(lines: list[str], out_dir: Path) -> None:
+    messages = []
+    for line in lines:
+        parsed = parse_message(line)
+        if parsed is not None:
+            messages.append(parsed)
+    rows = dedupe_rows([message_to_row(message) for message in messages])
+    if rows:
+        append_parquet_partition(rows, out_dir)
+
+
+def run_live(
+    api_key: str,
+    out_dir: Path,
+    bounding_boxes: list[list[list[float]]] | None = None,
+    flush_every: int = 500,
+) -> None:
+    """Synchronous entrypoint wrapping run_live_async, used by the CLI."""
+    asyncio.run(run_live_async(api_key, out_dir, bounding_boxes, flush_every))
+
+
 def stream_with_reconnect(
     connect: Callable[[], Iterable[str]],
     max_reconnects: int = 3,
@@ -245,14 +354,32 @@ def replay_file(path: Path) -> tuple[list[ParsedMessage], int]:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Replay a recorded AIS fixture into Parquet.")
+    parser = argparse.ArgumentParser(
+        description="Ingest AISStream.io messages, either replayed from a fixture or live."
+    )
     parser.add_argument(
-        "--replay", required=True, type=Path, help="Path to a recorded jsonl fixture"
+        "--replay", type=Path, help="Path to a recorded jsonl fixture to replay"
     )
     parser.add_argument(
         "--out", required=True, type=Path, help="Output directory for Parquet partitions"
     )
+    parser.add_argument(
+        "--live",
+        action="store_true",
+        help="Connect to the live AISStream.io WebSocket instead of replaying a fixture. "
+        "Reads the API key from the AISSTREAM_API_KEY environment variable.",
+    )
     args = parser.parse_args(argv)
+
+    if args.live:
+        api_key = os.environ.get("AISSTREAM_API_KEY")
+        if not api_key:
+            parser.error("--live requires the AISSTREAM_API_KEY environment variable to be set")
+        run_live(api_key, args.out)
+        return 0
+
+    if args.replay is None:
+        parser.error("either --replay <fixture> or --live is required")
 
     messages, malformed = replay_file(args.replay)
     if malformed:

@@ -1,0 +1,52 @@
+name: Nowcast Build
+
+on:
+  workflow_run:
+    workflows: ["Ingest ALSI"]
+    types: [completed]
+  workflow_dispatch: {}
+
+jobs:
+  ingest-alsi:
+    if: github.event_name == 'workflow_dispatch'
+    uses: ./.github/workflows/ingest-alsi.yml
+    secrets: inherit
+
+  build-and-backtest:
+    needs: ingest-alsi
+    # Also runs when triggered by the "Ingest ALSI" workflow_run event
+    # completing successfully, in addition to the workflow_dispatch path
+    # above (the needs: dependency only applies to the dispatch path,
+    # since workflow_run jobs cannot depend on a job in this same file).
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run data quality checks and full test suite
+        run: uv run pytest tests/
+
+      - name: Run backtest harness
+        run: |
+          echo "Placeholder: a production orchestrator script that reads raw/staging"
+          echo "and runs the full M2-M5 pipeline end to end does not yet exist as a"
+          echo "milestone deliverable. src/lng/nowcast/backtest.py's functions are"
+          echo "unit-tested (tests/test_backtest.py) but not wired into a single CLI"
+          echo "entrypoint yet. This step is a documented stub, not a silent claim"
+          echo "that a full rebuild runs here."
+          exit 1
+
+      - name: Build dashboard
+        working-directory: dashboard
+        run: |
+          npm install
+          npm run build

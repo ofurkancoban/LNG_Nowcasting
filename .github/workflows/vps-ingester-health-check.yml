@@ -1,0 +1,48 @@
+name: VPS Ingester Health Check
+
+# The long-lived AIS WebSocket ingester runs on a dedicated VPS as a
+# systemd-supervised process (deploy/systemd/lng-ingest-aisstream.service),
+# not on GitHub Actions, which cannot hold a persistent connection
+# (docs/milestones/M7.md, docs/risks.md). This workflow polls the VPS over
+# SSH to check how recently the ingester wrote a raw AIS partition file, and
+# fails loudly if it has gone stale, since a silent VPS outage would
+# otherwise be invisible until someone happened to check the dashboard.
+#
+# Requires these repository secrets to be configured by the user before this
+# workflow can run for real (never hardcode host/credentials in this file):
+#   VPS_HOST            - hostname or IP of the ingestion VPS
+#   VPS_SSH_USER         - SSH user (a non-root deploy user, per deploy/README.md)
+#   VPS_SSH_PRIVATE_KEY  - private key for that user, added as a secret
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+env:
+  MAX_STALENESS_MINUTES: "20"
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check newest raw AIS partition file age over SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_SSH_USER }}
+          key: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
+          script: |
+            set -euo pipefail
+            newest=$(find /opt/lng-nowcasting/raw/source=aisstream -type f -name '*.parquet' -printf '%T@\n' | sort -n | tail -1)
+            if [ -z "$newest" ]; then
+              echo "No raw AIS partition files found at all." >&2
+              exit 1
+            fi
+            now=$(date +%s)
+            age_minutes=$(( (now - ${newest%.*}) / 60 ))
+            echo "Newest raw AIS partition file is ${age_minutes} minutes old."
+            if [ "$age_minutes" -gt "${MAX_STALENESS_MINUTES}" ]; then
+              echo "Ingester appears stale: ${age_minutes} > ${MAX_STALENESS_MINUTES} minutes." >&2
+              exit 1
+            fi

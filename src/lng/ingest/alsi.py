@@ -11,6 +11,8 @@ correct historical data.
 
 from __future__ import annotations
 
+import argparse
+import os
 from collections.abc import Callable
 from datetime import UTC, date, datetime
 from pathlib import Path
@@ -134,3 +136,40 @@ def write_vintage_snapshot(rows: list[dict[str, Any]], out_dir: Path, built_at: 
     table = pa.Table.from_pylist(rows)
     pq.write_table(table, snapshot_dir / "data.parquet")
     return snapshot_dir
+
+
+def main(argv: list[str] | None = None) -> int:
+    """CLI entrypoint: fetches one ALSI report and writes a new vintage snapshot.
+
+    Reads the API key from the ALSI_API_KEY environment variable. Not
+    exercised by any test (would require a live network call); wired into
+    .github/workflows/ingest-alsi.yml for scheduled production use.
+    """
+    parser = argparse.ArgumentParser(
+        description="Ingest a GIE ALSI report into a vintage snapshot."
+    )
+    parser.add_argument(
+        "--type", default="eu", choices=["eu", "ne", "ai"], help="ALSI report type parameter"
+    )
+    parser.add_argument("--out", required=True, type=Path, help="Output directory for snapshots")
+    parser.add_argument(
+        "--base-url", default=BASE_URL, help="ALSI API base URL (use TEST_BASE_URL to rehearse)"
+    )
+    args = parser.parse_args(argv)
+
+    api_key = os.environ.get("ALSI_API_KEY")
+    if not api_key:
+        parser.error("ALSI_API_KEY environment variable must be set")
+
+    fetch_page = make_httpx_page_fetcher(args.base_url, api_key, {"type": args.type, "size": 300})
+    raw_entries = fetch_all_pages(fetch_page)
+    rows = rows_from_response({"data": raw_entries})
+
+    built_at = datetime.now(UTC)
+    snapshot_dir = write_vintage_snapshot(rows, args.out, built_at)
+    print(f"rows_written={len(rows)} snapshot={snapshot_dir}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
