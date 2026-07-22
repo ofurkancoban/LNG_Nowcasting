@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "prebuild": "uv run --directory .. python scripts/validate_marts_schema.py",
-    "build": "evidence build",
+    "build": "EVIDENCE_BUILD_DIR=./build/LNG_Nowcasting evidence build",
     "build:strict": "evidence build:strict",
     "dev": "evidence dev --open /",
     "test": "evidence build",

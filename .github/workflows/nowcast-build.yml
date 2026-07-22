@@ -62,7 +62,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dashboard/build
+          path: dashboard/build/LNG_Nowcasting
 
   deploy-pages:
     needs: build-and-backtest
