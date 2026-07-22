@@ -251,13 +251,15 @@ async def _live_message_lines(
     run against the real AISStream service this session (see
     docs/data_sources.md's UNVERIFIED note on AISStream's exact schema).
     """
-    async with websockets.connect(AISSTREAM_WS_URL) as connection:
-        await connection.send(json.dumps({"APIKey": api_key, "BoundingBoxes": bounding_boxes}))
-        try:
+    try:
+        async with websockets.connect(AISSTREAM_WS_URL, open_timeout=30) as connection:
+            await connection.send(
+                json.dumps({"APIKey": api_key, "BoundingBoxes": bounding_boxes})
+            )
             async for message in connection:
                 yield message if isinstance(message, str) else message.decode("utf-8")
-        except websockets.exceptions.ConnectionClosed as exc:
-            raise ConnectionClosed(str(exc)) from exc
+    except (websockets.exceptions.WebSocketException, TimeoutError, OSError) as exc:
+        raise ConnectionClosed(str(exc)) from exc
 
 
 async def run_live_async(
@@ -283,8 +285,9 @@ async def run_live_async(
                 if len(buffer) >= flush_every:
                     _flush_live_buffer(buffer, out_dir)
                     buffer = []
-        except ConnectionClosed:
-            logger.warning("AIS live connection closed, reconnecting")
+        except ConnectionClosed as exc:
+            logger.warning("AIS live connection closed (%s), reconnecting in 5s", exc)
+            await asyncio.sleep(5)
             continue
 
 
