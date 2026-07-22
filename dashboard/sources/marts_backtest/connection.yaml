@@ -1,0 +1,4 @@
+name: marts_backtest
+type: duckdb
+options:
+  filename: marts_backtest.duckdb
