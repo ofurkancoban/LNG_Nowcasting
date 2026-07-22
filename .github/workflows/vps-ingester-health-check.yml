@@ -32,6 +32,7 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_SSH_USER }}
           key: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
+          envs: MAX_STALENESS_MINUTES
           script: |
             set -euo pipefail
             newest=$(find /opt/lng-nowcasting/raw/source=aisstream -type f -name '*.parquet' -printf '%T@\n' | sort -n | tail -1)
