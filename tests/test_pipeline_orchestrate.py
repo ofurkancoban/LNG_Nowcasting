@@ -12,6 +12,7 @@ from lng.ingest.alsi import write_vintage_snapshot
 from lng.nowcast.model import APPROXIMATE_GWH_PER_CBM
 from lng.pipeline.orchestrate import (
     build_position_samples,
+    compute_vessel_tracker_rows,
     extract_static_data,
     load_alsi_vintages_by_terminal,
     load_raw_ais_rows,
@@ -186,3 +187,30 @@ def test_run_pipeline_returns_no_folds_when_no_vessels_match(tmp_path: Path) -> 
 
     folds = run_pipeline(raw_dir, alsi_dir, now=T0)
     assert folds == []
+
+
+def test_compute_vessel_tracker_rows_returns_latest_position_for_matched_vessel(
+    tmp_path: Path,
+) -> None:
+    _write_raw_ais_dataset(tmp_path)
+    rows = load_raw_ais_rows(tmp_path)
+
+    tracker_rows = compute_vessel_tracker_rows(rows)
+
+    assert len(tracker_rows) == 1
+    row = tracker_rows[0]
+    assert row["mmsi"] == MOZAH_MMSI
+    assert row["imo"] == MOZAH_IMO
+    assert row["vessel_name"] == "Mozah"
+    assert row["latitude"] == BERTH_POINT[1]
+    assert row["longitude"] == BERTH_POINT[0]
+
+
+def test_compute_vessel_tracker_rows_empty_when_no_vessels_match(tmp_path: Path) -> None:
+    line = _static_data_line(999999999, imo=1234567, draught=10.0, when=T0)
+    messages = [parse_message(line)]
+    rows = dedupe_rows([message_to_row(m) for m in messages if m is not None])  # type: ignore[arg-type]
+    write_parquet(rows, tmp_path)
+
+    tracker_rows = compute_vessel_tracker_rows(load_raw_ais_rows(tmp_path))
+    assert tracker_rows == []

@@ -151,6 +151,86 @@ def match_lng_carriers(
     return matched
 
 
+def compute_vessel_tracker_rows(
+    rows: list[dict[str, Any]], registry: VesselRegistry | None = None
+) -> list[dict[str, Any]]:
+    """Builds one row per matched LNG carrier with its most recently observed
+    position, for the live tracker map (dashboard/pages/tracker.md).
+
+    Recomputes static_data/positions/matched directly from raw rows rather
+    than reusing _run_pipeline_core's internals, so this stays decoupled
+    from run_pipeline()'s existing tested return contract (list[BacktestFold]).
+    """
+    registry = registry or VesselRegistry()
+    static_data = extract_static_data(rows)
+    positions = build_position_samples(rows)
+    matched = match_lng_carriers(static_data, registry)
+
+    tracker_rows = []
+    for mmsi, vessel in matched.items():
+        mmsi_positions = positions.get(mmsi, [])
+        if not mmsi_positions:
+            continue
+        last = mmsi_positions[-1]
+        tracker_rows.append(
+            {
+                "mmsi": mmsi,
+                "imo": vessel.imo,
+                "vessel_name": vessel.name,
+                "latitude": last.latitude,
+                "longitude": last.longitude,
+                "received_at": last.timestamp.isoformat(),
+            }
+        )
+    return tracker_rows
+
+
+def write_vessel_tracker_motherduck(
+    tracker_rows: list[dict[str, Any]],
+    motherduck_token: str,
+    database: str = "lng_nowcasting",
+    table: str = "vessel_positions",
+) -> int:
+    """Replaces the vessel_positions table with this run's tracker rows.
+
+    Unlike the append-only raw_aisstream/raw_alsi/backtest_metrics tables,
+    this is a current-snapshot table (where each known vessel is right now),
+    so every call fully replaces the contents rather than accumulating
+    history, matching write_parquet()'s overwrite semantics rather than
+    append_parquet_partition()'s.
+    """
+    import duckdb
+    import pandas as pd
+
+    df = pd.DataFrame(tracker_rows)  # noqa: F841 -- used by name in the SQL scan below
+
+    con = duckdb.connect(f"md:{database}?motherduck_token={motherduck_token}")
+    try:
+        con.execute(
+            f"""
+            CREATE TABLE IF NOT EXISTS {table} (
+                mmsi BIGINT,
+                imo BIGINT,
+                vessel_name VARCHAR,
+                latitude DOUBLE,
+                longitude DOUBLE,
+                received_at VARCHAR,
+                updated_at TIMESTAMP DEFAULT current_timestamp
+            )
+            """
+        )
+        con.execute(f"DELETE FROM {table}")  # noqa: S608
+        if tracker_rows:
+            con.execute(
+                f"INSERT INTO {table} (mmsi, imo, vessel_name, latitude, longitude, received_at) "  # noqa: S608
+                "SELECT mmsi, imo, vessel_name, latitude, longitude, received_at FROM df"
+            )
+    finally:
+        con.close()
+
+    return len(tracker_rows)
+
+
 def _draught_near(readings: list[StaticDataReading], when: datetime, *, before: bool) -> float:
     """Returns the closest draught reading before/after `when`, or the
     overall closest reading if none exists strictly on that side.
@@ -409,12 +489,24 @@ def main(argv: list[str] | None = None) -> int:
     if args.source == "local":
         if args.raw_ais_dir is None or args.alsi_dir is None:
             parser.error("--source local requires --raw-ais-dir and --alsi-dir")
-        folds = run_pipeline(args.raw_ais_dir, args.alsi_dir, now=datetime.now())
+        rows = load_raw_ais_rows(args.raw_ais_dir)
+        vintages_by_terminal = load_alsi_vintages_by_terminal(args.alsi_dir)
     else:
         token = os.environ.get("MOTHERDUCK_TOKEN")
         if not token:
             parser.error("--source motherduck requires the MOTHERDUCK_TOKEN environment variable")
-        folds = run_pipeline_motherduck(token, now=datetime.now())
+        rows = load_raw_ais_rows_motherduck(token)
+        vintages_by_terminal = load_alsi_vintages_from_motherduck(token)
+
+    folds = _run_pipeline_core(rows, vintages_by_terminal, now=datetime.now())
+
+    if args.motherduck:
+        token = os.environ.get("MOTHERDUCK_TOKEN")
+        if not token:
+            parser.error("--motherduck requires the MOTHERDUCK_TOKEN environment variable")
+        tracker_rows = compute_vessel_tracker_rows(rows)
+        n_tracker = write_vessel_tracker_motherduck(tracker_rows, token)
+        print(f"tracker_vessels_written={n_tracker}")
 
     if not folds:
         print("No backtest folds produced: no matched LNG carrier arrivals or ALSI vintages.")
