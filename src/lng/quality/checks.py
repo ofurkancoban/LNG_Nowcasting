@@ -18,9 +18,11 @@ ALSI_SCHEMA = pa.DataFrameSchema(
         "facility": pa.Column(str, nullable=False),
         "name": pa.Column(str, nullable=False),
         "gasDayStart": pa.Column(str, nullable=False),
-        "inventory": pa.Column(float, nullable=False),
+        "inventory_lng": pa.Column(float, nullable=False),
+        "inventory_gwh": pa.Column(float, nullable=False),
         "sendOut": pa.Column(float, nullable=False),
-        "dtmi": pa.Column(float, nullable=False),
+        "dtmi_lng": pa.Column(float, nullable=False),
+        "dtmi_gwh": pa.Column(float, nullable=False),
         "dtrs": pa.Column(float, nullable=False),
         "status": pa.Column(str, nullable=False),
     }

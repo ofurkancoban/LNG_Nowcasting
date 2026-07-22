@@ -38,12 +38,14 @@ def test_assert_ais_freshness_raises_on_stale_vessel() -> None:
 
 def _valid_alsi_row() -> dict[str, object]:
     return {
-        "facility": "21Z0000000000082X",
-        "name": "Gate terminal",
+        "facility": "21W0000000000079",
+        "name": "Rotterdam Gate Terminal",
         "gasDayStart": "2024-03-01",
-        "inventory": 145.32,
+        "inventory_lng": 145.32,
+        "inventory_gwh": 988.5,
         "sendOut": 210.5,
-        "dtmi": 180.0,
+        "dtmi_lng": 180.0,
+        "dtmi_gwh": 1224.0,
         "dtrs": 300.0,
         "status": "C",
     }
@@ -55,7 +57,7 @@ def test_assert_alsi_schema_passes_on_valid_rows() -> None:
 
 def test_assert_alsi_schema_raises_on_malformed_row() -> None:
     malformed = dict(_valid_alsi_row())
-    del malformed["dtmi"]
+    del malformed["dtmi_lng"]
     with pytest.raises(DataQualityError, match="failed schema validation"):
         assert_alsi_schema([malformed])
 

@@ -99,18 +99,25 @@ session.
     notices, filterable by `?url=<id>`.
   VERIFIED.
 - **Granularity and fields**: one row per facility (or aggregate) per gas
-  day: `gasDayStart`, `inventory` (10^3 m3 LNG in tanks, end of gas day),
-  `sendOut` (GWh/d), `dtmi` (Declared Total Maximum Inventory = storage
-  capacity), `dtrs` (Declared Total Reference Send-out = send-out capacity),
-  plus a per-dataset status flag (E = estimated, C = confirmed, N = no data)
-  and an `info` field linking to any relevant Service Announcement. VERIFIED,
-  **except** the exact field name for the status flag: the GIE API manual's
-  ALSI field table (section 2.4) does not itself list a status field name
-  (unlike the AGSI table, which explicitly names `status`); the existence of
-  a quality indicator is only described in prose (section 3.1). M4's
-  ingestion code assumes the field is named `status`, matching AGSI's
-  naming, but this specific name is UNVERIFIED against a live ALSI response
-  and should be confirmed before production use.
+  day: `gasDayStart`, `sendOut` (GWh/d), `dtrs` (Declared Total Reference
+  Send-out = send-out capacity, GWh/d), plus a per-dataset `status` flag
+  (E = estimated, C = confirmed, N = no data) and an `info` field linking to
+  any relevant Service Announcement. VERIFIED directly against a live API
+  response on 2026-07-22 (`GET /api?type=eu`), including the `status` field
+  name, which the older v007 manual left ambiguous.
+  **Schema correction**: `inventory` and `dtmi` are NOT flat numeric fields
+  as the v007 manual (and this project's original M4 implementation)
+  assumed. Per the GIE API manual's own changelog (v009, effective January
+  2024), both changed to nested objects: `{"lng": "<10^3 m3 LNG>", "gwh":
+  "<energy units>"}`. `src/lng/ingest/alsi.py` was corrected to flatten
+  these into `inventory_lng`/`inventory_gwh` and `dtmi_lng`/`dtmi_gwh`
+  columns after this was discovered running a real ingestion.
+- **Real EIC codes** (VERIFIED via `GET /api/about?show=listing` on
+  2026-07-22): Rotterdam Gate Terminal is `21W0000000000079`, Zeebrugge LNG
+  Terminal is `21W0000000001245`. The placeholder codes originally used in
+  `tests/fixtures/alsi_sample_response.json` and
+  `src/lng/pipeline/orchestrate.py`'s `FACILITY_TO_TERMINAL` mapping were
+  fabricated for testing and have been replaced with these real codes.
 - **Historical depth**: since 2012-01-01 or the terminal's commissioning
   date, whichever is later. Not every LSO backfilled its full history
   equally; check `/api/news` and the per-facility start date rather than

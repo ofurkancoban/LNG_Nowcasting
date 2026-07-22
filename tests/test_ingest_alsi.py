@@ -28,9 +28,10 @@ def fixture_response() -> dict[str, object]:
 def test_rows_from_response_parses_fixture(fixture_response: dict[str, object]) -> None:
     rows = rows_from_response(fixture_response)
     assert len(rows) == 2
-    assert rows[0]["facility"] == "21Z0000000000082X"
+    assert rows[0]["facility"] == "21W0000000000079"
     assert rows[0]["gasDayStart"] == "2024-03-01"
-    assert rows[0]["inventory"] == 145.32
+    assert rows[0]["inventory_lng"] == 145.32
+    assert rows[0]["inventory_gwh"] == 988.5
     assert rows[0]["status"] == "C"
 
 
@@ -42,7 +43,7 @@ def test_rows_from_response_raises_on_missing_field() -> None:
                 "name": "Broken terminal",
                 "code": "21Z0000000000000Z",
                 "gasDayStart": "2024-03-01",
-                "inventory": 10.0,
+                "inventory": {"lng": "10.0", "gwh": "68.0"},
                 "sendOut": 5.0,
                 # dtmi and dtrs and status intentionally missing
             }
@@ -50,6 +51,26 @@ def test_rows_from_response_raises_on_missing_field() -> None:
     }
     with pytest.raises(ValueError, match="missing required fields"):
         rows_from_response(broken)
+
+
+def test_rows_from_response_raises_on_flat_inventory_shape() -> None:
+    wrong_shape = {
+        "last_page": 1,
+        "data": [
+            {
+                "name": "Old-schema terminal",
+                "code": "21Z0000000000000Z",
+                "gasDayStart": "2024-03-01",
+                "inventory": 10.0,  # old flat-float shape, no longer valid
+                "sendOut": 5.0,
+                "dtmi": 20.0,
+                "dtrs": 8.0,
+                "status": "C",
+            }
+        ],
+    }
+    with pytest.raises(ValueError, match="not the expected"):
+        rows_from_response(wrong_shape)
 
 
 def test_fetch_all_pages_loops_over_multiple_pages() -> None:
@@ -71,9 +92,9 @@ def test_poller_blocks_second_poll_same_day_same_facility() -> None:
         call_count["n"] += 1
         return {"ok": True}
 
-    poller.poll("21Z0000000000082X", fetcher)
+    poller.poll("21W0000000000079", fetcher)
     with pytest.raises(PollingRateLimitError):
-        poller.poll("21Z0000000000082X", fetcher)
+        poller.poll("21W0000000000079", fetcher)
     assert call_count["n"] == 1
 
 
@@ -86,8 +107,8 @@ def test_poller_allows_different_facility_same_day() -> None:
 def test_poller_allows_same_facility_next_calendar_day() -> None:
     days = iter([date(2024, 3, 1), date(2024, 3, 2)])
     poller = AlsiPoller(clock=lambda: next(days))
-    poller.poll("21Z0000000000082X", lambda: {"ok": True})
-    poller.poll("21Z0000000000082X", lambda: {"ok": True})  # must not raise, new day
+    poller.poll("21W0000000000079", lambda: {"ok": True})
+    poller.poll("21W0000000000079", lambda: {"ok": True})  # must not raise, new day
 
 
 def test_write_vintage_snapshot_never_overwrites_and_both_stay_queryable(
@@ -96,7 +117,10 @@ def test_write_vintage_snapshot_never_overwrites_and_both_stay_queryable(
     rows_v1 = rows_from_response(fixture_response)
 
     revised_response = json.loads(FIXTURE_PATH.read_text())
-    revised_response["data"][0]["inventory"] = 999.0  # simulates a retroactive correction
+    revised_response["data"][0]["inventory"] = {
+        "lng": "999.0",
+        "gwh": "6793.2",
+    }  # simulates a retroactive correction
     rows_v2 = rows_from_response(revised_response)
 
     built_at_1 = datetime(2024, 3, 2, 19, 30, 0)
@@ -112,8 +136,8 @@ def test_write_vintage_snapshot_never_overwrites_and_both_stay_queryable(
     table_1 = pq.read_table(snapshot_1 / "data.parquet")
     table_2 = pq.read_table(snapshot_2 / "data.parquet")
 
-    inventory_1 = table_1.to_pylist()[0]["inventory"]
-    inventory_2 = table_2.to_pylist()[0]["inventory"]
+    inventory_1 = table_1.to_pylist()[0]["inventory_lng"]
+    inventory_2 = table_2.to_pylist()[0]["inventory_lng"]
 
     assert inventory_1 == 145.32
     assert inventory_2 == 999.0
@@ -138,9 +162,11 @@ def test_ingested_rows_schema(fixture_response: dict[str, object]) -> None:
             "facility": pa.Column(str, nullable=False),
             "name": pa.Column(str, nullable=False),
             "gasDayStart": pa.Column(str, nullable=False),
-            "inventory": pa.Column(float, nullable=False),
+            "inventory_lng": pa.Column(float, nullable=False),
+            "inventory_gwh": pa.Column(float, nullable=False),
             "sendOut": pa.Column(float, nullable=False),
-            "dtmi": pa.Column(float, nullable=False),
+            "dtmi_lng": pa.Column(float, nullable=False),
+            "dtmi_gwh": pa.Column(float, nullable=False),
             "dtrs": pa.Column(float, nullable=False),
             "status": pa.Column(str, nullable=False),
         }

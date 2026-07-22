@@ -93,12 +93,14 @@ def _write_raw_ais_dataset(out_dir: Path) -> None:
 def _write_alsi_vintage(out_dir: Path, gas_day: str, send_out: float, built_at: datetime) -> None:
     rows = [
         {
-            "facility": "21Z0000000000082X",  # maps to "Gate Rotterdam" via FACILITY_TO_TERMINAL
-            "name": "Gate terminal",
+            "facility": "21W0000000000079",  # Rotterdam Gate, maps via FACILITY_TO_TERMINAL
+            "name": "Rotterdam Gate Terminal",
             "gasDayStart": gas_day,
-            "inventory": 100.0,
+            "inventory_lng": 100.0,
+            "inventory_gwh": 680.0,
             "sendOut": send_out,
-            "dtmi": 180.0,
+            "dtmi_lng": 180.0,
+            "dtmi_gwh": 1224.0,
             "dtrs": 300.0,
             "status": "C",
         }

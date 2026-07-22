@@ -7,6 +7,12 @@ blocked here in code, not merely documented. Per ADR 0001 Decision 4, every
 ingestion run writes a new built_at-stamped vintage snapshot rather than
 overwriting a previous one, because GIE allows SSOs/LSOs to retroactively
 correct historical data.
+
+Schema note: as of GIE API manual v009 (December 2023 / January 2024
+changelog), `inventory` and `dtmi` changed from flat string fields to
+objects with `lng` (10^3 m3 LNG) and `gwh` (energy units) sub-fields. This
+project's earlier v007-based assumption of flat float fields was wrong;
+verified against a real live API response on 2026-07-22 and corrected here.
 """
 
 from __future__ import annotations
@@ -58,6 +64,10 @@ class AlsiPoller:
 def rows_from_response(response: dict[str, Any]) -> list[dict[str, Any]]:
     """Flattens an ALSI /api response's `data` array into ingestion rows.
 
+    `inventory` and `dtmi` are nested {"lng": ..., "gwh": ...} objects in the
+    real API (see module docstring); this extracts both units into separate
+    flat columns rather than picking just one.
+
     Raises ValueError loudly if a required field is missing from any entry,
     rather than writing a partial/null row.
     """
@@ -66,14 +76,25 @@ def rows_from_response(response: dict[str, Any]) -> list[dict[str, Any]]:
         missing = [field for field in REQUIRED_FIELDS if field not in entry]
         if missing:
             raise ValueError(f"ALSI entry missing required fields: {missing}")
+
+        inventory = entry["inventory"]
+        dtmi = entry["dtmi"]
+        if not isinstance(inventory, dict) or not isinstance(dtmi, dict):
+            raise ValueError(
+                "ALSI entry's inventory/dtmi fields are not the expected "
+                "{'lng': ..., 'gwh': ...} object shape"
+            )
+
         rows.append(
             {
                 "facility": entry.get("code"),
                 "name": entry.get("name"),
                 "gasDayStart": entry["gasDayStart"],
-                "inventory": float(entry["inventory"]),
+                "inventory_lng": float(inventory["lng"]),
+                "inventory_gwh": float(inventory["gwh"]),
                 "sendOut": float(entry["sendOut"]),
-                "dtmi": float(entry["dtmi"]),
+                "dtmi_lng": float(dtmi["lng"]),
+                "dtmi_gwh": float(dtmi["gwh"]),
                 "dtrs": float(entry["dtrs"]),
                 "status": entry["status"],
             }

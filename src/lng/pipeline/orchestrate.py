@@ -15,13 +15,13 @@ Known approximations, flagged rather than hidden:
   across the ingested dataset. This only works once enough history has been
   ingested to see a vessel in both conditions; with too little history it
   will underestimate the draught range and understate delivered volume.
-- GIE ALSI facility EIC codes are not yet mapped to
-  data/reference/terminal_geofences.geojson terminal names anywhere in this
-  project; `FACILITY_TO_TERMINAL` below is a small, project-defined mapping
-  covering only the fixture facility codes used in
-  tests/fixtures/alsi_sample_response.json. Before running this against
-  real ALSI data, this mapping must be extended using the real EIC listing
-  from GET /api/about?show=listing (docs/data_sources.md).
+- GIE ALSI facility EIC codes are mapped to
+  data/reference/terminal_geofences.geojson terminal names via
+  `FACILITY_TO_TERMINAL` below. Verified against a real
+  GET /api/about?show=listing response on 2026-07-22: Rotterdam Gate
+  Terminal is `21W0000000000079`, Zeebrugge LNG Terminal is
+  `21W0000000001245`. Only covers these two terminals; extend this mapping
+  before scoring against additional European LNG terminals.
 """
 
 from __future__ import annotations
@@ -47,8 +47,8 @@ from lng.vessels.registry import VesselRecord, VesselRegistry
 # the fixture codes used in tests; must be extended with real EIC codes
 # before use against real ALSI data (see module docstring).
 FACILITY_TO_TERMINAL = {
-    "21Z0000000000082X": "Gate Rotterdam",
-    "21Z0000000000082Y": "Zeebrugge",
+    "21W0000000000079": "Gate Rotterdam",  # Rotterdam Gate Terminal, verified via
+    "21W0000000001245": "Zeebrugge",  # /api/about?show=listing on 2026-07-22
 }
 
 
