@@ -37,7 +37,16 @@ select = ["E", "F", "I", "UP", "B"]
 strict = true
 
 [[tool.mypy.overrides]]
-module = ["pyarrow", "pyarrow.parquet", "shapely", "shapely.geometry", "pandas", "websockets", "websockets.exceptions"]
+module = [
+    "pyarrow",
+    "pyarrow.parquet",
+    "pyarrow.dataset",
+    "shapely",
+    "shapely.geometry",
+    "pandas",
+    "websockets",
+    "websockets.exceptions",
+]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

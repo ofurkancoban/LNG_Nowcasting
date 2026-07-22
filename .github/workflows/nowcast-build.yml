@@ -35,15 +35,28 @@ jobs:
       - name: Run data quality checks and full test suite
         run: uv run pytest tests/
 
-      - name: Run backtest harness
+      - name: Download raw ALSI snapshot from the triggering ingest run
+        if: github.event_name == 'workflow_run'
+        uses: actions/download-artifact@v4
+        with:
+          name: alsi-raw-snapshot-${{ github.event.workflow_run.id }}
+          path: raw
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Run orchestrator (ingestion -> nowcast -> backtest)
         run: |
-          echo "Placeholder: a production orchestrator script that reads raw/staging"
-          echo "and runs the full M2-M5 pipeline end to end does not yet exist as a"
-          echo "milestone deliverable. src/lng/nowcast/backtest.py's functions are"
-          echo "unit-tested (tests/test_backtest.py) but not wired into a single CLI"
-          echo "entrypoint yet. This step is a documented stub, not a silent claim"
-          echo "that a full rebuild runs here."
-          exit 1
+          uv run python -m lng.pipeline.orchestrate \
+            --raw-ais-dir raw \
+            --alsi-dir raw \
+            --out marts/backtest \
+            --run-id "${{ github.run_id }}"
+        # This genuinely runs src/lng/pipeline/orchestrate.py end to end
+        # (added after M7, see docs/progress/M7.md's follow-up note). It
+        # will legitimately exit 1 with "No backtest folds produced" until
+        # raw AIS data from the VPS ingester (deploy/README.md) is synced
+        # into this workflow by some future step; that sync mechanism does
+        # not exist yet and is flagged here rather than silently assumed.
 
       - name: Build dashboard
         working-directory: dashboard
