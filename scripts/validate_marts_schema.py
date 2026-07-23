@@ -2,8 +2,9 @@
 missing or malformed, per docs/milestones/M6.md's acceptance criteria.
 
 Run before the Evidence.dev dashboard build (wired as dashboard/package.json's
-"prebuild" script) so a missing, empty, or invalid backtest metrics table
-stops the build instead of silently rendering an empty page.
+"prebuild" script) so a missing or invalid backtest metrics table stops the
+build. Zero rows is treated as a valid (if unfinished) state, not a failure,
+since it just means no LNG carrier arrival has been matched yet.
 
 Reads from MotherDuck (the dashboard's live data source, per the
 docs/decisions/0001-architecture.md dashboard-hosting follow-up), not the
@@ -59,11 +60,11 @@ def main() -> int:
 
     if len(df) == 0:
         print(
-            f"ERROR: table {TABLE!r} exists but has zero rows. Run the orchestrator against "
-            "real data before building the dashboard, rather than showing an empty page.",
-            file=sys.stderr,
+            f"WARNING: table {TABLE!r} exists but has zero rows (no matched LNG carrier "
+            "arrival observed yet). The backtest accuracy page will render empty until a "
+            "real fold is produced; the vessel tracker map is unaffected."
         )
-        return 1
+        return 0
 
     try:
         METRICS_SCHEMA.validate(df)
