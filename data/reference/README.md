@@ -1,12 +1,19 @@
 # LNG carrier reference table
 
 `lng_carriers.csv` is a hand-curated starter set of LNG carriers identified
-by IMO number, sourced from individual Wikipedia articles (each row's
-`source_url`), which publish under CC BY-SA. This is a small, honestly
-partial seed set (6 vessels), not the full global LNG carrier fleet
-(~700 vessels per docs/data_sources.md's open question) — it exists to prove
-out the registry/capacity lookup pipeline in M2 and needs to be expanded
-before production use.
+by IMO number, sourced from Wikipedia and VesselFinder (each row's
+`source_url`). This is a small, honestly partial seed set (8 vessels), not
+the full global LNG carrier fleet (~700-715 vessels per docs/data_sources.md's
+open question) — it exists to prove out the registry/capacity lookup
+pipeline and needs to be expanded before production use.
+
+Two vessels (Al Gattara, Al Safliya) are real conventional Q-Flex-class
+carriers added specifically because the draught-based delivery model
+(src/lng/nowcast/model.py) cannot produce a meaningful estimate for a
+permanently-moored FSRU (see Hoegh Esperanza's near-constant draught) — a
+genuine end-to-end fold requires a vessel that actually transits full-to-
+empty, which conventional shuttle carriers do and floating storage units do
+not.
 
 No Global Fishing Watch data is used in this table, so it carries no
 CC BY-NC (non-commercial-only) restriction; the Wikipedia CC BY-SA source

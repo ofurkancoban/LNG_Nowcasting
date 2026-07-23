@@ -26,7 +26,7 @@ def labeled_sample() -> list[dict[str, object]]:
 
 
 def test_registry_loads_reference_csv(registry: VesselRegistry) -> None:
-    assert len(registry) == 6
+    assert len(registry) == 8
 
 
 def test_known_lng_carrier_is_identified(registry: VesselRegistry) -> None:
