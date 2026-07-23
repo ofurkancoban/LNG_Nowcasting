@@ -26,7 +26,7 @@ def labeled_sample() -> list[dict[str, object]]:
 
 
 def test_registry_loads_reference_csv(registry: VesselRegistry) -> None:
-    assert len(registry) == 326
+    assert len(registry) == 386
 
 
 def test_known_lng_carrier_is_identified(registry: VesselRegistry) -> None:
@@ -95,9 +95,10 @@ def test_reference_csv_schema_capacity_never_null() -> None:
 
 
 def test_unverified_vessel_has_specs_verified_false(registry: VesselRegistry) -> None:
-    # Adam LNG (IMO 9501186) comes from the bulk SLNG compatible-vessels list,
-    # added without individually verified capacity/build year.
-    record = registry.lookup(9501186)
+    # Al Rayyan (IMO 9086734) comes from the bulk SLNG compatible-vessels
+    # list only (not also cross-verified against Adriatic LNG's real
+    # capacity table), so it still carries a placeholder capacity.
+    record = registry.lookup(9086734)
     assert record is not None
     assert record.specs_verified is False
 

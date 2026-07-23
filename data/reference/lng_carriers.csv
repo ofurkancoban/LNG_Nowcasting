@@ -49,15 +49,15 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9360805,Murwab,210100,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
 9337987,Al Ghariya,210150,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
 9338266,Al Aamriya,210168,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
-9501186,Adam LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9501186,Adam LNG,161805,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9086734,Al Rayyan,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9085625,Al Wajbah,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9682552,Amadi,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9682552,Amadi,155024,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9645970,Arctic Aurora,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9284192,Arctic Lady,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9862918,Aristarchos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9862906,Aristidis I,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9339260,Arwa Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9862906,Aristidis I,174013,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9339260,Arwa Spirit,165609,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9610779,Asia Endeavour,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9606950,Asia Energy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9610767,Asia Excellence,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -65,24 +65,24 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9680190,Asia Venture,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9606948,Asia Vision,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9771080,Bahrain Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9401295,Barcelona Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9401295,Barcelona Knutsen,173650,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9613159,Beidou Star,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9766542,British Achiever,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9766554,British Contributor,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9766554,British Contributor,173705,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9333591,British Emerald,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9766578,British Mentor,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9766530,British Partner,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9766580,British Sponsor,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9368314,BW Brussels,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9758076,BW Lilac,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9758076,BW Lilac,173604,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9792591,BW Magna,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9368302,BW Paris (FSRU),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9792606,BW Pavilion Aranda,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9850678,BW Pavilion Aranthera,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9640645,BW Pavilion Leeara,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9792606,BW Pavilion Aranda,173654,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9850678,BW Pavilion Aranthera,173590,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9640645,BW Pavilion Leeara,161829,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9640437,BW Pavilion Vanda,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9758064,BW Tulip,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9246578,Cadiz Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9246578,Cadiz Knutsen,138121,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9390680,Cape Ann,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9765079,Cardissa,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9742819,Castillo De Caldelas,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -100,7 +100,7 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9636785,Cool Voyager,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9378280,Coral Favia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9378278,Coral Fraseri,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9636711,Corcovado LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9636711,Corcovado LNG,160070,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9681687,Creole Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9491812,Cubal,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9874454,Diamond Gas Crystal,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -129,19 +129,19 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9247364,Galicia Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9390185,Gaslog Chelsea,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9864928,Gaslog Galveston,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9707508,Gaslog Geneva,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9707508,Gaslog Geneva,171736,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9744013,Gaslog Genoa,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9864916,Gaslog Georgetown,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9707510,Gaslog Gibraltar,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9864916,Gaslog Georgetown,173881,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9707510,Gaslog Gibraltar,174318,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9744025,Gaslog Gladstone,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9687021,Gaslog Glasgow,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9687019,Gaslog Greece,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9748899,Gaslog Houston,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9638915,Gaslog Salem,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9687019,Gaslog Greece,174292,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9748899,Gaslog Houston,174015,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9638915,Gaslog Salem,155062,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9600530,Gaslog Santiago,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9638903,Gaslog Saratoga,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9352860,Gaslog Savannah,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9634086,Gaslog Seattle,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9634086,Gaslog Seattle,155077,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9600528,Gaslog Shanghai,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9355604,Gaslog Singapore,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9626285,Gaslog Skagen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -149,12 +149,12 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9816763,Gaslog Warsaw,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9876660,Gaslog Wellington,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9855812,Gaslog Westminster,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9819650,Gaslog Windsor,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9819650,Gaslog Windsor,180219,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9360922,Gigira Laitebo,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9845013,Global Energy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9253105,Golar Artic,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9626039,Golar Bear,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9626027,Golar Celcius,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9626039,Golar Bear,160619,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9626027,Golar Celcius,160571,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9624926,Golar Crystal,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9303560,Golar Grand,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9637325,Golar Ice,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -173,7 +173,7 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9822451,Hoegh Gannet,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9674907,Hoegh Grace,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9250725,Hongkong Energy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9326603,Iberica Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9326603,Iberica Knutsen,138116,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9317315,Ibri LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9629536,Independence,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9874820,Isabella,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -182,19 +182,19 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 8608705,Karmol LNGt Powership Asia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9785158,Kinisis,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9636723,Kita LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9870525,Kool Orca,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9870525,Kool Orca,173991,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9613161,Kumul,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9629598,Lena River,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9629598,Lena River,154907,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9064085,Lerici,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9277620,LNG Dream,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9874480,LNG Enterprise,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9874480,LNG Enterprise,174280,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9200316,LNG Jamal,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9769855,LNG Jia Xin (Ex Saga Dawn),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9666998,LNG Jurojin,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9269960,LNG Lokoja,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 8701791,LNG Maleo,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9834301,LNG Merak,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9774135,LNG Sakura,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9774135,LNG Sakura,177338,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9696149,LNG Saturn,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9771913,LNG Schneeweisschen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9645736,LNG Venus,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -202,13 +202,13 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9490961,Lobito,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9705653,Macoma,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9259276,Madrid Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9770921,Magdala,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9770921,Magdala,173578,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9342487,Magellan Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9490959,Malanje,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9490959,Malanje,160518,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9682588,Maran Gas Achilles,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9682590,Maran Gas Agamemnon,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9887217,Maran Gas Amorgos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9701217,Maran Gas Amphipolis,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9701217,Maran Gas Amphipolis,173440,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9633422,Maran Gas Apollonia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9302499,Maran Gas Asclepius,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9753014,Maran Gas Chios,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -218,16 +218,16 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9682605,Maran Gas Hector,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9767962,Maran Gas Hydra,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9627502,Maran Gas Lindos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9658238,Maran Gas Mystras,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9658238,Maran Gas Mystras,159855,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9732371,Maran Gas Olympias,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9709489,Maran Gas Pericles,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9633434,Maran Gas Posidonia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9844863,Maran Gas Psara,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9701229,Maran Gas Roxana,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9701229,Maran Gas Roxana,173047,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9767950,Maran Gas Spetses,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9658240,Maran Gas Troy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9709491,Maran Gas Ulysses,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9732369,Maran Gas Vergina,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9709491,Maran Gas Ulysses,174250,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9732369,Maran Gas Vergina,173566,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9336749,Marib Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9778313,Marshal Vasilevskiy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9770945,Megara,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -246,13 +246,13 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9307188,Methane Rita Andrea,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9321756,Methane Shirley Elizabeth,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9336737,Methane Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9869942,Minerva Kalymnos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9869942,Minerva Kalymnos,174275,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9854375,Minerva Limnos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9878876,Mu Lan,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9074626,Mubaraz,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9705641,Murex,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9705641,Murex,173551,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9770933,Myrina,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9324277,Neo Energy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9324277,Neo Energy,149800,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9294264,Nizwa LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9796781,Nohshu Maru,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 8608872,Northwest Sanderling,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -266,7 +266,7 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9636735,Palu LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9750256,Pan Africa,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9750232,Pan Americas,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9750220,Pan Asia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9750220,Pan Asia,173960,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9750244,Pan Europe,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9862346,Pearl LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9256602,Pioneer,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -276,9 +276,9 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9229647,Puteri Nilam Satu,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9477593,Ribera Del Duero Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9721736,Rioja Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9904170,Santander Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9864746,Scf Barents,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9654878,Scf Melampus,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9904170,Santander Knutsen,174035,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9864746,Scf Barents,173919,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9654878,Scf Melampus,170518,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9654880,Scf Mitre,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 1038073,Sean Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9666558,Seishu Maru (Moss),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -299,7 +299,7 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9634098,Solaris,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9482304,Sonangol Benguela,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9482299,Sonangol Etosha,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9475600,Sonangol Sambizanga,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9475600,Sonangol Sambizanga,160785,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9613147,Southern Cross,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9475208,Soyo,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9315393,Stena Blue Sky,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -312,11 +312,11 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9361990,Tangguh Sago,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9721401,Torben Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9238038,Trader,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9319404,Trinity Arrow,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9319404,Trinity Arrow,154980,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9350927,Trinity Glory,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9837066,Vasant 1,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9630004,Velikiy Novgorod,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
-9864667,Vivit Americas LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9864667,Vivit Americas LNG,174099,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
 9627954,Wilforce,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9627966,Wilpride,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9753026,Woodside Chaney,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
@@ -325,3 +325,63 @@ imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
 9627485,Woodside Rogers,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9636747,Yari LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
 9629586,Yenesei River,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9271248,Arctic Princess,147981,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9709037,Flex Rainbow,174170,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9650054,Maran Gas Alexandria,161873,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9693173,Sk Resolute,180213,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9331672,Seri Balqis,156787,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9888766,Orion Star,174240,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9864796,Celsius Canberra,180219,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9276389,Arctic Discoverer,142579,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9895238,Vivirt City LNG,179329,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9889916,Orion Sun,174240,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9654696,Golar Glacier,161854,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9766566,British Listener,173651,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9845776,Amberjack LNG,173950,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9878888,Gui Ying,174201,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9876737,Gaslog Winchester,180174,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9236418,Castillo de Villalba,138130,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9889904,Orion Sea,174298,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9633797,Cool Runner,160573,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9825568,Rias Baixas Knutsen,179999,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9945435,Celsius Geneva,180219,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9862463,Flex Volunteer,174009,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9862246,Pearl LNG,174568,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9902938,LNG Prosperity,173968,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9852975,Elisa Larus,173988,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9863182,Dorado LNG,174313,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9893606,LNG Endeavour,174307,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9918157,Extremadura Knutsen,173882,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9854765,Traiano Knutsen,176607,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9851634,Flex Artemis,173586,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9922976,Lech Kaczynski,174024,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9977220,Id'Asah,174221,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9964182,Marvel Dove,174047,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9976903,Nuaijah,174288,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9976939,Al Kharrarah,174153,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9862475,Flex Vigilant,173979,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9967328,Clean Mistral,199812,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9976915,Umm Swayyah,174219,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9947500,New Green,173987,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9879698,Adamastos,174020,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9904182,Malaga Knutsen,173908,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9975519,Mesaieed,174075,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9963449,Marvel Swallow,174238,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9886744,Clean Copano,199742,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9760768,Marvel Falcon,174441,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9760770,Marvel Hawk,174228,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9958999,Celsius Galway,179958,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9956408,Maran Gas Kastelorizo,174185,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9947639,Orion Gauguin,174218,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9976135,Kool Tiger,173943,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9958846,Venture Bayou,174239,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9917579,SM Kestrel,174012,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9986104,Al Galayel,174065,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9945447,Celsius Giza,180301,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9986283,HL Fortuna,174004,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9810379,Maran Gas Andros,173567,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9854363,Minerva Psara,173592,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9970583,Venture Cameron,200245,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9970686,Harmonic Breeze,174198,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9979773,Oacean Oasis,174266,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
+9947627,Orion Hugo,173958,2010,"unspecified (capacity verified via Adriatic LNG, build year unverified)",https://www.adriaticlng.it/en/market-area/services/other-services/maritime-services/list-lng-tankers-cleared-for-unloading/list-lng-ships,True
