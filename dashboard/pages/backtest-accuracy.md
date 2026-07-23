@@ -12,6 +12,7 @@ select
     avg(mape) as mape_pct,
     max(abs_error_gwh) as worst_error_gwh
 from marts_backtest.backtest_metrics
+where run_id != '__no_folds_yet__'
 ```
 
 <Grid cols=4>
@@ -29,6 +30,7 @@ select
     terminal,
     abs_error_gwh
 from marts_backtest.backtest_metrics
+where run_id != '__no_folds_yet__'
 order by gas_day
 ```
 
@@ -52,6 +54,7 @@ select
     actual_gwh,
     abs_error_gwh
 from marts_backtest.backtest_metrics
+where run_id != '__no_folds_yet__'
 order by terminal, gas_day
 ```
 

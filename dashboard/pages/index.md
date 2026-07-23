@@ -14,6 +14,7 @@ select
     avg(mae) as mae_gwh,
     avg(mape) as mape_pct
 from marts_backtest.backtest_metrics
+where run_id != '__no_folds_yet__'
 ```
 
 <Grid cols=4>
@@ -32,6 +33,7 @@ select
     avg(mae) as mae_gwh,
     avg(mape) as mape_pct
 from marts_backtest.backtest_metrics
+where run_id != '__no_folds_yet__'
 group by terminal
 order by terminal
 ```
