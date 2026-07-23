@@ -26,7 +26,7 @@ def labeled_sample() -> list[dict[str, object]]:
 
 
 def test_registry_loads_reference_csv(registry: VesselRegistry) -> None:
-    assert len(registry) == 8
+    assert len(registry) == 50
 
 
 def test_known_lng_carrier_is_identified(registry: VesselRegistry) -> None:
@@ -42,7 +42,7 @@ def test_lookup_returns_none_for_unknown_imo(registry: VesselRegistry) -> None:
 
 
 def test_full_cargo_capacity_cbm_known_vessel(registry: VesselRegistry) -> None:
-    assert full_cargo_capacity_cbm(9337755, registry) == 266000.0
+    assert full_cargo_capacity_cbm(9337755, registry) == 266253.0
 
 
 def test_full_cargo_capacity_cbm_unknown_vessel(registry: VesselRegistry) -> None:

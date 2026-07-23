@@ -23,7 +23,7 @@ from lng.vessels.registry import VesselRegistry
 
 MOZAH_MMSI = 227000111
 MOZAH_IMO = 9337755  # real vessel in data/reference/lng_carriers.csv
-MOZAH_CAPACITY_CBM = 266000.0
+MOZAH_CAPACITY_CBM = 266253.0
 
 BERTH_POINT = (4.020, 51.945)  # inside Gate Rotterdam's berth polygon
 T0 = datetime(2024, 3, 1, 0, 0, 0)
