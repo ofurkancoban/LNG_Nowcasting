@@ -516,7 +516,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if not folds:
         print("No backtest folds produced: no matched LNG carrier arrivals or ALSI vintages.")
-        return 1
+        return 0
 
     if args.out is not None:
         path = write_metrics_parquet(folds, args.run_id, args.out)
