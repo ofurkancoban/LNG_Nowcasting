@@ -13,6 +13,7 @@ from lng.nowcast.model import APPROXIMATE_GWH_PER_CBM
 from lng.pipeline.orchestrate import (
     build_position_samples,
     compute_vessel_tracker_rows,
+    estimate_arrival_deliveries,
     extract_static_data,
     load_alsi_vintages_by_terminal,
     load_raw_ais_rows,
@@ -214,3 +215,39 @@ def test_compute_vessel_tracker_rows_empty_when_no_vessels_match(tmp_path: Path)
 
     tracker_rows = compute_vessel_tracker_rows(load_raw_ais_rows(tmp_path))
     assert tracker_rows == []
+
+
+def test_estimate_arrival_deliveries_declines_unverified_vessel() -> None:
+    from lng.events.detect import ArrivalEvent
+    from lng.pipeline.orchestrate import StaticDataReading
+    from lng.vessels.registry import VesselRecord
+
+    unverified_vessel = VesselRecord(
+        imo=9501186,
+        name="Adam LNG",
+        cargo_capacity_cbm=170000.0,
+        build_year=2010,
+        propulsion_type="unspecified (unverified bulk entry)",
+        source_url="https://example.com/bulk-list",
+        specs_verified=False,
+    )
+    readings = [
+        StaticDataReading(received_at=T0, imo=9501186, draught_m=12.0),
+        StaticDataReading(received_at=T0 + timedelta(hours=3), imo=9501186, draught_m=8.0),
+    ]
+    arrivals = [
+        ArrivalEvent(
+            terminal="Gate Rotterdam",
+            mmsi=999888777,
+            entered_berth_at=T0,
+            confirmed_at=T0 + DEFAULT_DWELL_THRESHOLD,
+        )
+    ]
+    from lng.events.geofence import TerminalGeofence
+
+    terminal = TerminalGeofence(name="Gate Rotterdam", approach_polygon=[], berth_polygon=[])
+
+    deliveries = estimate_arrival_deliveries(
+        999888777, terminal, arrivals, readings, unverified_vessel
+    )
+    assert deliveries == []

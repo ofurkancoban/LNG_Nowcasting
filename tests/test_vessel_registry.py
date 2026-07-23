@@ -26,7 +26,7 @@ def labeled_sample() -> list[dict[str, object]]:
 
 
 def test_registry_loads_reference_csv(registry: VesselRegistry) -> None:
-    assert len(registry) == 50
+    assert len(registry) == 326
 
 
 def test_known_lng_carrier_is_identified(registry: VesselRegistry) -> None:
@@ -86,8 +86,23 @@ def test_reference_csv_schema_capacity_never_null() -> None:
             "build_year": pa.Column(int, checks=pa.Check.in_range(1950, 2100)),
             "propulsion_type": pa.Column(str, nullable=False),
             "source_url": pa.Column(str, nullable=False),
+            "specs_verified": pa.Column(bool, nullable=False),
         }
     )
     df = pd.read_csv(DEFAULT_REFERENCE_PATH)
     df["cargo_capacity_cbm"] = df["cargo_capacity_cbm"].astype(float)
     schema.validate(df)
+
+
+def test_unverified_vessel_has_specs_verified_false(registry: VesselRegistry) -> None:
+    # Adam LNG (IMO 9501186) comes from the bulk SLNG compatible-vessels list,
+    # added without individually verified capacity/build year.
+    record = registry.lookup(9501186)
+    assert record is not None
+    assert record.specs_verified is False
+
+
+def test_curated_vessel_has_specs_verified_true(registry: VesselRegistry) -> None:
+    record = registry.lookup(9337755)  # Mozah, individually verified
+    assert record is not None
+    assert record.specs_verified is True

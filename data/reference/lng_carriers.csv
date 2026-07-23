@@ -1,51 +1,327 @@
-imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url
-9337755,Mozah,266253,2008,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9780354,Hoegh Esperanza,170032,2017,dual fuel diesel electric (4x Wartsila W8L50DF) FSRU,https://en.wikipedia.org/wiki/H%C3%B6egh_Esperanza
-9320075,Gaselys,154500,2006,unspecified,https://en.wikipedia.org/wiki/Gaselys
-5412583,Methane Princess,35000,1964,unspecified,https://en.wikipedia.org/wiki/Methane_Princess
-9713105,MOL FSRU Challenger,263000,2017,unspecified,https://en.wikipedia.org/wiki/MT_MOL_FSRU_Challenger
-7360124,MV Gastor,122000,1976,unspecified,https://en.wikipedia.org/wiki/MV_Gastor
-9337705,Al Gattara,216200,2007,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9337963,Al Safliya,210150,2007,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9397286,Al Ghashamiya,217591,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360831,Sheehaniya,210200,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9337729,Mesaimeer,216312,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9397353,Onaiza,210150,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9337717,Al Gharrafa,216200,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9337743,Al Hamla,216200,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9337731,Tembek,216200,2007,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9443683,Al Dafna,266366,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9372743,Al Ghuwairiya,263300,2008,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9397315,Al Mafyar,266370,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9397303,Mekaines,266476,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9372731,Umm Slal,265978,2008,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9397327,Al Kharaitiyat,216300,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9397339,Al Rekayyat,216293,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9397341,Al Sadd,210200,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9397298,Al Mayeda,266000,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9388821,Al Samriya,263300,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9388833,Bu Samra,266000,2008,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9388819,Lijmiliya,263300,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9431147,Al Bahiya,210100,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9431123,Al Karaana,210100,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9431111,Al Khattiya,210150,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9431135,Al Nuaman,210100,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9443401,Aamira,266000,2010,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9443413,Rasheeda,266276,2010,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9418365,Shagra,266000,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9431214,Zarga,266000,2010,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360790,Al Oraiq,210100,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360829,Umm Al Amad,210100,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360881,Al Kharsaah,217000,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360908,Al Khuwair,217000,2006,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360893,Al Shamal,217000,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9337951,Al Ruwais,210150,2007,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9337975,Duhail,210150,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360879,Al Huwaila,217000,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360867,Al Utouriya,215000,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360843,Al Thumama,216200,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360855,Al Sahla,216200,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360817,Fraiha,210100,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9360805,Murwab,210100,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9337987,Al Ghariya,210150,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
-9338266,Al Aamriya,210168,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf
+imo,name,cargo_capacity_cbm,build_year,propulsion_type,source_url,specs_verified
+9337755,Mozah,266253,2008,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9780354,Hoegh Esperanza,170032,2017,dual fuel diesel electric (4x Wartsila W8L50DF) FSRU,https://en.wikipedia.org/wiki/H%C3%B6egh_Esperanza,True
+9320075,Gaselys,154500,2006,unspecified,https://en.wikipedia.org/wiki/Gaselys,True
+5412583,Methane Princess,35000,1964,unspecified,https://en.wikipedia.org/wiki/Methane_Princess,True
+9713105,MOL FSRU Challenger,263000,2017,unspecified,https://en.wikipedia.org/wiki/MT_MOL_FSRU_Challenger,True
+7360124,MV Gastor,122000,1976,unspecified,https://en.wikipedia.org/wiki/MV_Gastor,True
+9337705,Al Gattara,216200,2007,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9337963,Al Safliya,210150,2007,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9397286,Al Ghashamiya,217591,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360831,Sheehaniya,210200,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9337729,Mesaimeer,216312,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9397353,Onaiza,210150,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9337717,Al Gharrafa,216200,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9337743,Al Hamla,216200,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9337731,Tembek,216200,2007,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9443683,Al Dafna,266366,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9372743,Al Ghuwairiya,263300,2008,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9397315,Al Mafyar,266370,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9397303,Mekaines,266476,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9372731,Umm Slal,265978,2008,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9397327,Al Kharaitiyat,216300,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9397339,Al Rekayyat,216293,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9397341,Al Sadd,210200,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9397298,Al Mayeda,266000,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9388821,Al Samriya,263300,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9388833,Bu Samra,266000,2008,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9388819,Lijmiliya,263300,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9431147,Al Bahiya,210100,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9431123,Al Karaana,210100,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9431111,Al Khattiya,210150,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9431135,Al Nuaman,210100,2009,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9443401,Aamira,266000,2010,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9443413,Rasheeda,266276,2010,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9418365,Shagra,266000,2009,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9431214,Zarga,266000,2010,Q-Max class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360790,Al Oraiq,210100,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360829,Umm Al Amad,210100,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360881,Al Kharsaah,217000,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360908,Al Khuwair,217000,2006,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360893,Al Shamal,217000,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9337951,Al Ruwais,210150,2007,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9337975,Duhail,210150,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360879,Al Huwaila,217000,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360867,Al Utouriya,215000,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360843,Al Thumama,216200,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360855,Al Sahla,216200,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360817,Fraiha,210100,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9360805,Murwab,210100,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9337987,Al Ghariya,210150,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9338266,Al Aamriya,210168,2008,Q-Flex class,https://www.nakilat.com/wp-content/uploads/2021/02/Fleet-List-02-2021.pdf,True
+9501186,Adam LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9086734,Al Rayyan,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9085625,Al Wajbah,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9682552,Amadi,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9645970,Arctic Aurora,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9284192,Arctic Lady,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9862918,Aristarchos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9862906,Aristidis I,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9339260,Arwa Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9610779,Asia Endeavour,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9606950,Asia Energy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9610767,Asia Excellence,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9680188,Asia Integrity,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9680190,Asia Venture,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9606948,Asia Vision,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9771080,Bahrain Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9401295,Barcelona Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9613159,Beidou Star,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9766542,British Achiever,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9766554,British Contributor,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9333591,British Emerald,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9766578,British Mentor,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9766530,British Partner,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9766580,British Sponsor,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9368314,BW Brussels,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9758076,BW Lilac,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9792591,BW Magna,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9368302,BW Paris (FSRU),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9792606,BW Pavilion Aranda,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9850678,BW Pavilion Aranthera,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9640645,BW Pavilion Leeara,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9640437,BW Pavilion Vanda,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9758064,BW Tulip,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9246578,Cadiz Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9390680,Cape Ann,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9765079,Cardissa,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9742819,Castillo De Caldelas,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9433717,Castillo De Satisteban,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9878711,Celsius Charlotte,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9323687,Clean Energy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9317999,Clean Force,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9637492,Clean Ocean,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9637507,Clean Planet,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9655456,Clean Vision,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9696735,Cntic Vpower Global,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9869306,Cobia LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9640023,Cool Explorer,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9869265,Cool Racer,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9636785,Cool Voyager,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9378280,Coral Favia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9378278,Coral Fraseri,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9636711,Corcovado LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9681687,Creole Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9491812,Cubal,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9874454,Diamond Gas Crystal,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9862487,Diamond Gas Metropolis,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9779226,Diamond Gas Orchid,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9779238,Diamond Gas Rose,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9810020,Diamond Gas Sakura,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9874466,Diamond Gas Vicotria,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9265500,Dukhan (Moss),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9649328,Energy Atlantic,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9245720,Energy Frontier,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9752565,Energy Glory,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9483877,Energy Horizon,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9736092,Energy Liberty,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9666560,Esshu Maru (Moss),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9230050,Excalibur,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9857377,Flex Amber,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9857365,Flex Aurora,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9825427,Flex Constellation,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9825439,Flex Courageous,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9762261,Flex Endeavour,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9762273,Flex Enterprise,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9851646,Flex Resolute,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9859636,FueLNG Bellina,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9275359,Fuji LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9247364,Galicia Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9390185,Gaslog Chelsea,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9864928,Gaslog Galveston,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9707508,Gaslog Geneva,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9744013,Gaslog Genoa,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9864916,Gaslog Georgetown,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9707510,Gaslog Gibraltar,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9744025,Gaslog Gladstone,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9687021,Gaslog Glasgow,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9687019,Gaslog Greece,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9748899,Gaslog Houston,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9638915,Gaslog Salem,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9600530,Gaslog Santiago,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9638903,Gaslog Saratoga,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9352860,Gaslog Savannah,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9634086,Gaslog Seattle,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9600528,Gaslog Shanghai,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9355604,Gaslog Singapore,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9626285,Gaslog Skagen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9626273,Gaslog Sydney,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9816763,Gaslog Warsaw,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9876660,Gaslog Wellington,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9855812,Gaslog Westminster,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9819650,Gaslog Windsor,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9360922,Gigira Laitebo,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9845013,Global Energy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9253105,Golar Artic,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9626039,Golar Bear,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9626027,Golar Celcius,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9624926,Golar Crystal,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9303560,Golar Grand,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9637325,Golar Ice,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9165011,Golar Mazo,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9624938,Golar Penguin,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9624914,Golar Seal,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9655808,Golar Tundra,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9315707,Grace Acacia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9323675,Grace Cosmos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9540716,Grace Dahlia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9338955,Grand Aniva (Moss),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9332054,Grand Elena (Moss),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9338929,Grand Mereya,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9872987,Hellas Diana,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9653678,Hoegh Gallant,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9822451,Hoegh Gannet,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9674907,Hoegh Grace,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9250725,Hongkong Energy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9326603,Iberica Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9317315,Ibri LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9629536,Independence,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9874820,Isabella,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9901362,K. Lotus,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9043677,Karmol LNGt Powership Africa,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+8608705,Karmol LNGt Powership Asia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9785158,Kinisis,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9636723,Kita LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9870525,Kool Orca,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9613161,Kumul,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9629598,Lena River,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9064085,Lerici,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9277620,LNG Dream,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9874480,LNG Enterprise,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9200316,LNG Jamal,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9769855,LNG Jia Xin (Ex Saga Dawn),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9666998,LNG Jurojin,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9269960,LNG Lokoja,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+8701791,LNG Maleo,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9834301,LNG Merak,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9774135,LNG Sakura,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9696149,LNG Saturn,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9771913,LNG Schneeweisschen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9645736,LNG Venus,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9875800,LNGships Empress,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9490961,Lobito,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9705653,Macoma,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9259276,Madrid Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9770921,Magdala,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9342487,Magellan Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9490959,Malanje,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9682588,Maran Gas Achilles,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9682590,Maran Gas Agamemnon,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9887217,Maran Gas Amorgos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9701217,Maran Gas Amphipolis,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9633422,Maran Gas Apollonia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9302499,Maran Gas Asclepius,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9753014,Maran Gas Chios,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9331048,Maran Gas Coronis,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9633173,Maran Gas Delphi,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9627497,Maran Gas Efessos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9682605,Maran Gas Hector,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9767962,Maran Gas Hydra,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9627502,Maran Gas Lindos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9658238,Maran Gas Mystras,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9732371,Maran Gas Olympias,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9709489,Maran Gas Pericles,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9633434,Maran Gas Posidonia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9844863,Maran Gas Psara,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9701229,Maran Gas Roxana,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9767950,Maran Gas Spetses,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9658240,Maran Gas Troy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9709491,Maran Gas Ulysses,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9732369,Maran Gas Vergina,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9336749,Marib Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9778313,Marshal Vasilevskiy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9770945,Megara,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9369904,Meridian Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9321768,Methane Alison Victoria,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9516129,Methane Becki Anne,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9321744,Methane Heather Sally,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9307190,Methane Jane Elizabeth,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9412880,Methane Julia Louise,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9256793,Methane Kari Elin,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9307205,Methane Lydon Volney,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9520376,Methane Mickie Harper,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9321770,Methane Nile Eagle,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9425277,Methane Patricia Camila,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9253715,Methane Princess,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9307188,Methane Rita Andrea,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9321756,Methane Shirley Elizabeth,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9336737,Methane Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9869942,Minerva Kalymnos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9854375,Minerva Limnos,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9878876,Mu Lan,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9074626,Mubaraz,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9705641,Murex,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9770933,Myrina,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9324277,Neo Energy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9294264,Nizwa LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9796781,Nohshu Maru,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+8608872,Northwest Sanderling,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+8913150,Northwest Sandpiper,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+8608884,Northwest Snipe,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9045132,Northwest Stormpetrel,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9681699,Oak Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9698111,Oceanic Breeze,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9698123,Pacific Breeze,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9743875,Pacific Mimosa (Moss),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9636735,Palu LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9750256,Pan Africa,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9750232,Pan Americas,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9750220,Pan Asia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9750244,Pan Europe,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9862346,Pearl LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9256602,Pioneer,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9723801,Prachi,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9810549,Prism Agility,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9888481,Prism Courage,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9229647,Puteri Nilam Satu,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9477593,Ribera Del Duero Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9721736,Rioja Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9904170,Santander Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9864746,Scf Barents,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9654878,Scf Melampus,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9654880,Scf Mitre,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+1038073,Sean Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9666558,Seishu Maru (Moss),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9321653,Seri Anggun,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9321665,Seri Angkasa,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9329679,Seri Ayu,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9331634,Seri Bakti,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9331660,Seri Balhaf,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9331646,Seri Begawan,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9331658,Seri Bijaksana,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9714305,Seri Camar,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9714276,Seri Camellia,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9714290,Seri Cempaka,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9338797,Sestao Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9414632,Sevilla Knutsen,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9418375,Shagra,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9238040,Singapore Energy,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9634098,Solaris,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9482304,Sonangol Benguela,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9482299,Sonangol Etosha,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9475600,Sonangol Sambizanga,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9613147,Southern Cross,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9475208,Soyo,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9315393,Stena Blue Sky,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9349942,Sun Arrows,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9330745,Symphonic Breeze (Moss),170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9349007,Tangguh Foja,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9333632,Tangguh Hiri,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9349019,Tangguh Jaya,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9355379,Tangguh Palung,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9361990,Tangguh Sago,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9721401,Torben Spirit,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9238038,Trader,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9319404,Trinity Arrow,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9350927,Trinity Glory,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9837066,Vasant 1,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9630004,Velikiy Novgorod,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9864667,Vivit Americas LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9627954,Wilforce,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9627966,Wilpride,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9753026,Woodside Chaney,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9369899,Woodside Donaldson,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9633161,Woodside Goode,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9627485,Woodside Rogers,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9636747,Yari LNG,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False
+9629586,Yenesei River,170000,2010,unspecified (unverified bulk entry),https://www.slng.com.sg/sites/default/files/2022-10/SLNG%20Compatible%20Vessels%20List_Sep%202022.pdf,False

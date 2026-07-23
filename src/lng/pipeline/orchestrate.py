@@ -258,8 +258,14 @@ def estimate_arrival_deliveries(
     Ballast/laden draught reference points are approximated as the min/max
     of this vessel's own observed draught readings (see module docstring's
     caveat); requires at least two distinct readings to produce a
-    meaningful non-zero estimate.
+    meaningful non-zero estimate. Declines to estimate anything for vessels
+    whose capacity was not individually verified (VesselRecord.specs_verified
+    is False, e.g. bulk name+IMO list entries with a placeholder capacity)
+    rather than silently basing a volume estimate on a made-up number.
     """
+    if not vessel.specs_verified:
+        return []
+
     if len(static_readings) < 2:
         return []
 
